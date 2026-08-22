@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ប្រព័ន្ធសុខភាពសិក្សា និងចលនាកីឡាសាលារៀន — កម្មវិធីអន្តរកម្ម</title>
+
+<!-- ===== ការបង្ហាញតំណ (Link preview / Open Graph) ===== -->
+<meta name="description" content="របាយការណ៍ស្រាវជ្រាវសុីជម្រៅស្តីពីការកសាងប្រព័ន្ធសុខភាពសិក្សាគ្រប់ជ្រុងជ្រោយ និងការលើកកម្ពស់ចលនាកីឡាសាលារៀននៅកម្ពុជា — គោលនយោបាយជាតិ ២០២១–២០៣០, សំណុំសកម្មភាព ៩ ចំណុច, អភិក្រមផ្កាយបី។">
+<link rel="canonical" href="https://schoolhealthkh.github.io/school-health-report/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="របាយការណ៍ស្រាវជ្រាវក្រុមទី១">
+<meta property="og:locale" content="km_KH">
+<meta property="og:url" content="https://schoolhealthkh.github.io/school-health-report/">
+<meta property="og:title" content="ការកសាងប្រព័ន្ធសុខភាពសិក្សាគ្រប់ជ្រុងជ្រោយ និងការលើកកម្ពស់ចលនាកីឡាសាលារៀននៅកម្ពុជា">
+<meta property="og:description" content="របាយការណ៍ស្រាវជ្រាវសុីជម្រៅ — គោលនយោបាយជាតិ ២០២១–២០៣០ · សំណុំសកម្មភាព ៩ ចំណុច · អភិក្រមផ្កាយបី · SBCC · SDG 3 &amp; 4">
+<meta property="og:image" content="https://schoolhealthkh.github.io/school-health-report/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="របាយការណ៍ស្រាវជ្រាវ ប្រព័ន្ធសុខភាពសិក្សាគ្រប់ជ្រុងជ្រោយ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ការកសាងប្រព័ន្ធសុខភាពសិក្សាគ្រប់ជ្រុងជ្រោយ និងការលើកកម្ពស់ចលនាកីឡាសាលារៀននៅកម្ពុជា">
+<meta name="twitter:description" content="របាយការណ៍ស្រាវជ្រាវសុីជម្រៅ — គោលនយោបាយជាតិ ២០២១–២០៣០ · សំណុំសកម្មភាព ៩ ចំណុច · អភិក្រមផ្កាយបី · SBCC · SDG 3 &amp; 4">
+<meta name="twitter:image" content="https://schoolhealthkh.github.io/school-health-report/preview.png">
+<meta name="theme-color" content="#004792">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23004792'/><path d='M32 14 L52 24 L32 34 L12 24 Z' fill='%23d4af37'/><path d='M20 30 v12 q12 7 24 0 v-12' fill='%23fff' opacity='.9'/></svg>">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@200;300;400;500;600;700&family=Moul&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#004792; --primary-2:#0b63c5; --accent:#d4af37;
+  --bg:#f6f8fb; --card:#ffffff; --ink:#1e293b; --muted:#64748b; --line:#e2e8f0;
+}
+html[data-theme="dark"]{
+  --primary:#5aa2ff; --primary-2:#8ec2ff; --accent:#f0cd60;
+  --bg:#0b1220; --card:#131c2e; --ink:#e6edf7; --muted:#94a3b8; --line:#233149;
+}
+*{scroll-behavior:smooth}
+body{font-family:'Kantumruy Pro',sans-serif;background:var(--bg);color:var(--ink);
+     font-size:var(--fs,16px);line-height:2;transition:background .3s,color .3s}
+.moul{font-family:'Moul',serif;font-weight:400;line-height:2.05}
+h1.moul{line-height:2.5!important}
+.card{background:var(--card);border:1px solid var(--line);border-radius:1.25rem;
+      box-shadow:0 8px 24px -12px rgba(2,20,50,.18)}
+.pri{color:var(--primary)} .bg-pri{background:var(--primary)} .bd-pri{border-color:var(--primary)}
+.muted{color:var(--muted)}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;
+      padding:.3rem .85rem;font-size:.72rem;font-weight:600;cursor:pointer;transition:.2s;white-space:nowrap}
+.chip:hover{border-color:var(--primary);color:var(--primary)}
+.chip.on{background:var(--primary);color:#fff;border-color:var(--primary)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.4,0,.2,1),opacity .3s;opacity:0}
+.acc.open .acc-body{max-height:6000px;opacity:1}
+.acc.open .caret{transform:rotate(180deg)}
+.caret{transition:transform .3s}
+.acc-head{cursor:pointer;user-select:none}
+.acc.open .acc-head{background:linear-gradient(90deg,color-mix(in srgb,var(--primary) 8%,transparent),transparent)}
+mark{background:var(--accent);color:#1a1a1a;border-radius:3px;padding:0 2px}
+.chartbox{position:relative;height:320px;width:100%}
+.tocl{display:block;padding:.4rem .7rem;border-radius:.6rem;font-size:.8rem;color:var(--muted);
+      border-left:3px solid transparent;transition:.2s}
+.tocl:hover{color:var(--primary);background:color-mix(in srgb,var(--primary) 7%,transparent)}
+.tocl.active{color:var(--primary);border-left-color:var(--accent);font-weight:700;
+             background:color-mix(in srgb,var(--primary) 9%,transparent)}
+.kpi{background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#fff}
+.dot{width:10px;height:10px;border-radius:99px;background:var(--accent);flex:none;margin-top:.7rem}
+table{border-collapse:collapse;width:100%}
+th,td{border:1px solid var(--line);padding:.7rem .8rem;font-size:.8rem;vertical-align:top;text-align:left}
+th{background:color-mix(in srgb,var(--primary) 10%,transparent);color:var(--primary);font-weight:700}
+tr.hide{display:none}
+.star{color:var(--accent)}
+::-webkit-scrollbar{width:9px;height:9px}
+::-webkit-scrollbar-thumb{background:var(--line);border-radius:9px}
+/* ===== ការធ្វើមាត្រដ្ឋានអក្សរសម្រាប់បទបង្ហាញ (typography scale) ===== */
+html{--k:1.3}
+body{font-size:calc(var(--k)*16px)}
+.text-\[9px\]   {font-size:calc(var(--k)*9px)!important}
+.text-\[10px\]  {font-size:calc(var(--k)*10px)!important}
+.text-\[10\.5px\]{font-size:calc(var(--k)*10.5px)!important}
+.text-\[11px\]  {font-size:calc(var(--k)*11px)!important}
+.text-\[11\.5px\]{font-size:calc(var(--k)*11.5px)!important}
+.text-\[12px\]  {font-size:calc(var(--k)*12px)!important}
+.text-\[12\.5px\]{font-size:calc(var(--k)*12.5px)!important}
+.text-\[13px\]  {font-size:calc(var(--k)*13px)!important}
+.text-\[13\.5px\]{font-size:calc(var(--k)*13.5px)!important}
+.text-\[14px\]  {font-size:calc(var(--k)*14px)!important}
+.text-\[15px\]  {font-size:calc(var(--k)*15px)!important}
+.text-xs {font-size:calc(var(--k)*12px)!important}
+.text-sm {font-size:calc(var(--k)*14px)!important}
+.text-lg {font-size:calc(var(--k)*18px)!important}
+.text-xl {font-size:calc(var(--k)*20px)!important}
+.text-2xl{font-size:calc(var(--k)*24px)!important}
+.text-3xl{font-size:calc(var(--k)*30px)!important}
+@media (min-width:768px){
+  .md\:text-xl {font-size:calc(var(--k)*20px)!important}
+  .md\:text-3xl{font-size:calc(var(--k)*30px)!important}
+}
+.chip{font-size:calc(var(--k)*.72rem)}
+.tocl{font-size:calc(var(--k)*.78rem)}
+th,td{font-size:calc(var(--k)*.8rem)}
+.chartbox{height:calc(var(--k)*300px)}
+#sizeBadge{font-variant-numeric:tabular-nums}
+
+/* ===== របៀបបទបង្ហាញ (Presentation mode) ===== */
+body.present #toc{display:none}
+body.present .navExtra{display:none}
+body.present main{max-width:1150px;margin:0 auto}
+body.present section{padding:2.5rem 0;border-bottom:1px dashed var(--line)}
+body.present h2{font-size:calc(var(--k)*26px)!important}
+body.present{line-height:2.15}
+
+
+
+
+/* ===== ប្រអប់មេឌា និងរបៀបកែសម្រួល ===== */
+.picbox{width:186px;flex:none;position:relative}
+.dz-empty{height:118px;border:2px dashed var(--line);border-radius:.6rem;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:.2rem;color:var(--muted);text-align:center;cursor:pointer;
+  transition:.2s;background:color-mix(in srgb,var(--primary) 4%,transparent);padding:.4rem}
+.picbox:hover .dz-empty{border-color:var(--primary);color:var(--primary)}
+.picbox.drag .dz-empty{border-color:var(--accent);color:var(--ink);
+  background:color-mix(in srgb,var(--accent) 20%,transparent)}
+.picbox[data-has]{cursor:zoom-in}
+.mbadge{position:absolute;left:6px;bottom:6px;background:rgba(0,0,0,.72);color:#fff;font-size:9px;
+  font-weight:700;padding:2px 7px;border-radius:99px;letter-spacing:.5px}
+.pdfcard{height:118px;border-radius:.6rem;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:.3rem;text-align:center;padding:.5rem;color:var(--primary);
+  background:color-mix(in srgb,var(--primary) 10%,transparent);border:1px solid var(--line)}
+body:not(.edit) .editonly{display:none}
+body.edit [data-eid]{outline:1px dashed color-mix(in srgb,var(--accent) 60%,transparent);
+  outline-offset:2px;border-radius:3px}
+body.edit [data-eid]:focus{outline:2px solid var(--primary);background:color-mix(in srgb,var(--primary) 6%,transparent)}
+.chip.on{background:var(--primary);color:#fff;border-color:var(--primary)}
+#lb{position:fixed;inset:0;z-index:99999;background:rgba(5,10,20,.96);
+    display:none;align-items:center;justify-content:center;flex-direction:column;padding:3rem 1.5rem}
+#lb.on{display:flex}
+#lbbody{display:flex;align-items:center;justify-content:center;max-width:92vw;max-height:76vh}
+#lbbody img,#lbbody video{max-width:92vw;max-height:76vh;object-fit:contain;border-radius:.7rem;
+  box-shadow:0 24px 70px rgba(0,0,0,.65);background:#0b1220}
+#lbbody iframe{width:min(92vw,1100px);height:76vh;border:0;border-radius:.7rem;background:#fff;
+  box-shadow:0 24px 70px rgba(0,0,0,.65)}
+#lbcap{color:#fff;margin-top:1.1rem;font-size:15px;text-align:center;max-width:80vw;line-height:1.95;font-weight:600}
+#lbn{color:#94a3b8;font-size:11px;margin-top:.45rem;letter-spacing:2.5px;font-weight:700}
+.lbbtn{position:fixed;background:rgba(255,255,255,.13);color:#fff;border:none;width:54px;height:54px;
+       border-radius:99px;font-size:26px;line-height:1;cursor:pointer;display:grid;place-items:center;
+       transition:background .2s;font-family:system-ui,sans-serif}
+.lbbtn:hover{background:rgba(255,255,255,.28)}
+#lbprev{left:26px;top:50%;transform:translateY(-50%)}
+#lbnext{right:26px;top:50%;transform:translateY(-50%)}
+#lbclose{right:26px;top:26px;font-size:21px}
+@media (max-width:640px){#lbprev{left:10px}#lbnext{right:10px}.lbbtn{width:44px;height:44px;font-size:21px}}
+
+/* ===== បទបង្ហាញ Slideshow ===== */
+#show{position:fixed;inset:0;z-index:99998;display:none;flex-direction:column;
+  background:radial-gradient(1200px 700px at 20% -10%,#0b63c5 0%,transparent 60%),
+             radial-gradient(900px 600px at 110% 110%,#d4af37 0%,transparent 55%),
+             linear-gradient(135deg,#001c42 0%,#00306a 55%,#004792 100%);color:#fff}
+#show.on{display:flex}
+#showbar{height:4px;background:rgba(255,255,255,.15);flex:none}
+#showbar i{display:block;height:100%;width:0;background:var(--accent, #d4af37);transition:width .45s ease}
+#showslides{flex:1;position:relative;overflow:hidden}
+.sl{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:clamp(2rem,5vw,4.5rem) clamp(1.5rem,7vw,7rem);gap:.55rem;cursor:pointer}
+.sl.on{display:flex}
+.sl.on>*{animation:slrise .6s cubic-bezier(.2,.75,.3,1) both}
+.sl.on>*:nth-child(2){animation-delay:.07s}
+.sl.on>*:nth-child(3){animation-delay:.14s}
+.sl.on>*:nth-child(4){animation-delay:.21s}
+.sl.on>*:nth-child(5){animation-delay:.28s}
+.sl.on>*:nth-child(6){animation-delay:.35s}
+@keyframes slrise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.sl-k{font-size:clamp(13px,1.5vw,20px);color:#f0cd60;line-height:2}
+.sl-rule{width:84px;height:4px;background:var(--accent,#d4af37);border-radius:99px;margin:.5rem 0}
+.sl-h1{font-size:clamp(24px,4.2vw,54px);line-height:2.05;text-shadow:0 4px 22px rgba(0,0,0,.35);margin:0}
+.sl-h2{font-size:clamp(22px,3.6vw,46px);line-height:2.05;margin:0;text-shadow:0 4px 22px rgba(0,0,0,.35)}
+.sl-h3{font-size:clamp(19px,2.7vw,36px);line-height:2.05;margin:0;text-shadow:0 3px 16px rgba(0,0,0,.3)}
+.sl-sub{font-size:clamp(14px,1.7vw,24px);font-weight:600;opacity:.95;line-height:1.95}
+.sl-no{font-size:clamp(46px,9vw,120px);font-weight:800;line-height:1;color:rgba(255,255,255,.16);
+  letter-spacing:-2px}
+.sl-eyebrow{font-size:clamp(10px,1.05vw,14px);letter-spacing:3px;text-transform:uppercase;
+  color:#f0cd60;font-weight:800;opacity:.95}
+.sl-lead{font-size:clamp(13px,1.55vw,21px);line-height:2.05;max-width:60ch;opacity:.94;font-weight:600}
+.sl-body{max-width:78ch;max-height:44vh;overflow:auto;text-align:left;cursor:auto;
+  font-size:clamp(12px,1.25vw,17px);line-height:2.15;opacity:.93;padding-right:.5rem}
+.sl-body p{margin:0 0 .85rem}
+.sl-body::-webkit-scrollbar{width:6px}
+.sl-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,.28);border-radius:9px}
+.sl-media img{max-height:34vh;max-width:70vw;border-radius:.8rem;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.sl-chips{display:flex;flex-wrap:wrap;gap:.55rem;justify-content:center;margin-top:1rem}
+.sl-chips span{border:1.5px solid rgba(255,255,255,.45);background:rgba(255,255,255,.1);
+  border-radius:99px;padding:.5rem 1.2rem;font-size:clamp(10px,1.1vw,15px);font-weight:700}
+.sl-chart,.sl-table{width:min(1100px,92vw);max-height:74vh;overflow:auto;cursor:auto}
+.sl-chart .card,.sl-table .card{background:#fff;color:#1e293b}
+html[data-theme="dark"] .sl-chart .card,html[data-theme="dark"] .sl-table .card{background:#131c2e;color:#e6edf7}
+#showfoot{flex:none;display:flex;align-items:center;justify-content:center;gap:1rem;
+  padding:1rem 1.4rem 1.6rem;font-size:12px;letter-spacing:2px;font-weight:700}
+.shbtn{background:rgba(255,255,255,.14);color:#fff;border:none;width:46px;height:46px;border-radius:99px;
+  font-size:20px;line-height:1;cursor:pointer;display:grid;place-items:center;transition:background .2s;
+  font-family:system-ui,sans-serif}
+.shbtn:hover,.shbtn.on{background:rgba(255,255,255,.32)}
+#shclose{position:fixed;top:22px;right:22px;font-size:16px}
+#shnum{min-width:82px;text-align:center;opacity:.8}
+.sl-ph{display:none}
+@media (max-width:640px){#shclose{top:14px;right:14px}.sl{padding:1.5rem 1.1rem}}
+
+/* ===== ប្រអប់ជ្រើសស្លាយ ===== */
+#showpick{position:fixed;inset:0;z-index:99999;display:none;align-items:center;justify-content:center;
+  background:rgba(5,10,20,.72);backdrop-filter:blur(4px);padding:1.5rem}
+#showpick.on{display:flex}
+#pickcard{background:var(--card);color:var(--ink);border-radius:1.2rem;max-width:640px;width:100%;
+  max-height:88vh;overflow:auto;padding:1.7rem;box-shadow:0 30px 80px rgba(0,0,0,.5);border:1px solid var(--line)}
+.pk-h{font-family:'Moul',serif;color:var(--primary);font-size:calc(var(--k)*15px);line-height:2}
+.pk-sub{font-size:calc(var(--k)*11px);color:var(--muted);line-height:1.95;margin-top:.3rem}
+.pk-presets{display:flex;flex-wrap:wrap;gap:.5rem;margin:1.1rem 0}
+.pk-btn{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:99px;
+  padding:.45rem 1rem;font-size:calc(var(--k)*11px);font-weight:700;cursor:pointer;font-family:inherit}
+.pk-btn:hover{border-color:var(--primary);color:var(--primary)}
+.pk-row{display:flex;align-items:center;gap:.7rem;padding:.5rem .6rem;border-radius:.6rem;cursor:pointer;
+  font-size:calc(var(--k)*11.5px);line-height:1.9}
+.pk-row:hover{background:color-mix(in srgb,var(--primary) 7%,transparent)}
+.pk-row input{width:17px;height:17px;accent-color:var(--primary);flex:none;cursor:pointer}
+.pk-n{font-weight:800;color:var(--muted);font-size:calc(var(--k)*10px);flex:none;width:22px}
+.pk-t{flex:1;min-width:0}
+.pk-c{font-size:calc(var(--k)*9.5px);color:var(--muted);font-weight:700;background:var(--bg);
+  border-radius:99px;padding:.15rem .55rem;flex:none}
+.pk-brief{display:flex;gap:.7rem;align-items:flex-start;margin-top:1rem;padding:.8rem;
+  background:color-mix(in srgb,var(--accent) 12%,transparent);border-radius:.7rem;
+  font-size:calc(var(--k)*11px);line-height:1.9;cursor:pointer}
+.pk-brief input{width:17px;height:17px;accent-color:var(--primary);flex:none;margin-top:.15rem;cursor:pointer}
+.pk-foot{display:flex;align-items:center;gap:.7rem;margin-top:1.2rem;flex-wrap:wrap}
+.pk-count{flex:1;font-size:calc(var(--k)*11px);font-weight:800;color:var(--primary)}
+.pk-go{background:var(--primary);color:#fff;border:none;border-radius:99px;padding:.65rem 1.5rem;
+  font-size:calc(var(--k)*12px);font-weight:800;cursor:pointer;font-family:inherit}
+.pk-cancel{background:none;border:1px solid var(--line);color:var(--muted);border-radius:99px;
+  padding:.65rem 1.2rem;font-size:calc(var(--k)*11px);font-weight:700;cursor:pointer;font-family:inherit}
+
+@media print{
+  .noprint{display:none!important}
+  .acc-body{max-height:none!important;opacity:1!important}
+  body{--fs:12px;background:#fff}
+  .card{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+
+<input type="file" id="picFile" accept="image/*,video/*,application/pdf" class="hidden" style="display:none">
+
+<!-- ===== progress + nav ===== -->
+<div id="prog" class="noprint fixed top-0 left-0 h-1 z-[60]" style="background:var(--accent);width:0%"></div>
+
+<nav class="noprint fixed top-0 inset-x-0 z-50 backdrop-blur-lg border-b" style="background:color-mix(in srgb,var(--card) 85%,transparent);border-color:var(--line)">
+  <div class="max-w-[1500px] mx-auto px-4 h-16 flex items-center gap-3">
+    <button id="btnToc" class="lg:hidden text-xl pri">☰</button>
+    <div class="w-9 h-9 rounded-lg bg-pri text-white grid place-items-center font-bold text-sm flex-none">SH</div>
+    <div class="hidden sm:block leading-tight">
+      <div class="moul text-[11px] pri">ប្រព័ន្ធសុខភាពសិក្សាគ្រប់ជ្រុងជ្រោយ</div>
+      <div class="text-[9px] muted uppercase tracking-widest">Interactive Research Explorer</div>
+    </div>
+    <div class="flex-1"></div>
+    <div class="relative">
+      <input id="q" placeholder="ស្វែងរកខ្លឹមសារ…" class="w-36 sm:w-64 text-xs rounded-full px-4 py-2 outline-none border"
+             style="background:var(--bg);border-color:var(--line);color:var(--ink)">
+      <span id="qn" class="absolute -bottom-5 right-2 text-[10px] muted"></span>
+    </div>
+    <button class="chip navExtra" onclick="allAcc(true)">ពន្លាតទាំងអស់</button>
+    <button class="chip navExtra" onclick="allAcc(false)">បង្រួម</button>
+    <span class="flex items-center gap-1">
+      <button class="chip" onclick="fs(-1)" title="បង្រួមអក្សរ">A−</button>
+      <span id="sizeBadge" class="text-[10px] muted w-9 text-center font-bold">130%</span>
+      <button class="chip" onclick="fs(1)" title="ពង្រីកអក្សរ">A+</button>
+    </span>
+    <button class="chip" id="btnPresent" title="របៀបបទបង្ហាញ">📽 បទបង្ហាញ</button>
+    <button class="chip" id="btnTheme">🌙</button>
+    <button class="chip navExtra" id="btnEdit" title="បើក/បិទរបៀបកែសម្រួល">✏️ កែសម្រួល</button>
+    <button class="chip navExtra" id="btnExport" title="ទាញយកឯកសារជាមួយរូបភាព">💾 ទាញយក</button>
+    <button class="chip navExtra" onclick="window.print()">🖨</button>
+  </div>
+</nav>
+
+<div class="max-w-[1500px] mx-auto px-4 pt-24 pb-24 flex gap-8">
+
+  <!-- ===== TOC ===== -->
+  <aside id="toc" class="noprint hidden lg:block w-60 flex-none">
+    <div class="sticky top-24 card p-3">
+      <div class="text-[10px] uppercase tracking-widest muted px-2 pb-2 font-bold">មាតិកា</div>
+      <div id="tocList"></div>
+      <div class="mt-3 pt-3 border-t text-[10px] muted px-2" style="border-color:var(--line)">
+        <div id="readStat">អានរួច ០%</div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="flex-1 min-w-0 space-y-10" id="main"></main>
+</div>
+
+<footer class="noprint py-10 text-center text-[10px] uppercase tracking-[.2em] muted border-t" style="border-color:var(--line)">
+  របាយការណ៍ស្រាវជ្រាវសុីជម្រៅ · គោលនយោបាយជាតិស្តីពីសុខភាពសិក្សា ២០២១–២០៣០ · SDG 3 &amp; SDG 4
+</footer>
+
+<script>
+/* ============================================================
+   ១. ទិន្នន័យខ្លឹមសារ (Content model) — ស្រង់ចេញពីរបាយការណ៍ដើម
+   ============================================================ */
+
+const OBJECTIVES = [
+ {n:'ទី១', t:'ក្របខណ្ឌគោលនយោបាយជាតិ', icon:'⚖️', tag:'អភិបាលកិច្ច',
+  sum:'តម្រូវឱ្យអនុវត្ត «គោលនយោបាយជាតិស្តីពីសុខភាពសិក្សា» និង «សំណុំសកម្មភាព ៩ ចំណុច» ឱ្យបាន ១០០% នៅតាមគ្រឹះស្ថានសិក្សាគោលដៅ។',
+  body:[
+   'ការអនុវត្តក្របខណ្ឌគោលនយោបាយជាតិ គឺជាការកែទម្រង់អភិបាលកិច្ចសាលារៀនជាមូលដ្ឋាន។ វាមិនមែនជាការបន្ថែមភារកិច្ចថ្មីមួយទៀតទេ ប៉ុន្តែជាការរៀបចំរចនាសម្ព័ន្ធនៃការសម្រេចចិត្តឡើងវិញ ដើម្បីឱ្យសុខភាពក្លាយជាផ្នែកមួយនៃប្រតិបត្តិការប្រចាំថ្ងៃរបស់សាលា។',
+   'សំណុំសកម្មភាពទាំង ៩ ត្រូវបានរៀបចំឡើងយ៉ាងប្រទាក់ក្រឡាគ្នា ដើម្បីដោះស្រាយបញ្ហាប្រឈមជាប្រព័ន្ធ — ចាប់ពីក្របខណ្ឌច្បាប់និងយន្តការ រហូតដល់ការចូលរួមរបស់គ្រប់ភាគីពាក់ព័ន្ធ។',
+   'អន្តរកម្មនៃសកម្មភាពទាំងនេះ បង្កើតបានជា «ខែលការពារ» ដែលធានាបាននូវទិដ្ឋភាពនៃការរស់នៅរបស់សិស្សក្នុងសាលា ត្រូវបានយកចិត្តទុកដាក់។'
+  ]},
+ {n:'ទី២', t:'ចលនាកីឡាសាលារៀន', icon:'🏃', tag:'កាយសម្បទា',
+  sum:'ក្រោមទស្សនទាន «យុវជនម្នាក់ ចេះលេងកីឡាយ៉ាងហោចណាស់មួយប្រភេទប្រចាំជីវិត» — បង្កើនម៉ោងហាត់ប្រាណ និងក្លឹបកីឡាក្រៅម៉ោង ២ម៉ោង/សប្តាហ៍។',
+  body:[
+   'នេះជាអន្តរាគមន៍ផ្នែកសុខភាពសាធារណៈដ៏មានឥទ្ធិពលបំផុតមួយ។ ផែនការកំណត់យ៉ាងច្បាស់នូវការបង្កើនម៉ោងហាត់ប្រាណ និងសកម្មភាពក្លឹបកីឡាក្រៅម៉ោងសិក្សាយ៉ាងហោចណាស់ ២ម៉ោង/សប្តាហ៍។',
+   'យុទ្ធសាស្ត្រនេះឆ្លើយតបផ្ទាល់ទៅនឹងការគំរាមកំហែងនៃជំងឺមិនឆ្លង (NCDs) និងបញ្ហាភាពអសកម្មនៃរាងកាយ ដែលកំពុងកើនឡើងក្នុងសង្គមឌីជីថល។',
+   'ការបង្កើតទម្លាប់សកម្មភាពរាងកាយតាំងពីវ័យកុមារ នឹងបន្តក្លាយជាទម្លាប់ប្រចាំជីវិត ដែលជួយកាត់បន្ថយបន្ទុកចំណាយលើវិស័យសុខាភិបាលជាតិយ៉ាងសន្ធឹកសន្ធាប់នៅពេលអនាគត។'
+  ]},
+ {n:'ទី៣', t:'អាហារូបត្ថម្ភ និងសុវត្ថិភាពចំណីអាហារ', icon:'🥗', tag:'អាហារូបត្ថម្ភ',
+  sum:'អនុវត្តម៉ឺងម៉ាត់តាមសេចក្តីណែនាំលេខ ៧១ អយក.សណន ស្តីពីការហាមឃាត់ការតាំងលក់ និងផ្សព្វផ្សាយភេសជ្ជៈប៉ូវកម្លាំង និងចំណីអាហារជាតិស្ករ/ខ្លាញ់លើសកម្រិត។',
+  body:[
+   'សេចក្តីណែនាំលេខ ៧១ អយក.សណន គ្របដណ្តប់លើការវេចខ្ចប់ចាយ ការតាំងលក់ និងការផ្សព្វផ្សាយភេសជ្ជៈប៉ូវកម្លាំង ព្រមទាំងចំណីអាហារដែលមានជាតិស្ករឬខ្លាញ់លើសកម្រិត ក្នុងនិងជុំវិញបរិវេណសាលារៀន។',
+   'ការស្រាវជ្រាវបានបង្ហាញថា យុវវ័យតែងតែមានការយល់ខុសអំពីការទទួលបានថាមពលពីភេសជ្ជៈទាំងនេះ ខណៈដែលវាផ្ទុកជាតិស្ករខ្ពស់ដែលបង្កហានិភ័យជំងឺទឹកនោមផ្អែម និងប៉ះពាល់ដល់ការអភិវឌ្ឍខួរក្បាល។',
+   'ការហាមឃាត់នេះ មិនមែនគ្រាន់តែជាការរឹតត្បិតនោះទេ ប៉ុន្តែជាការកែទម្រង់ប្រព័ន្ធផ្គត់ផ្គង់សេដ្ឋកិច្ចខ្នាតតូចនៅក្នុងសាលារៀន ដោយបង្វែរឱ្យទីផ្សារចំណីអាហារសាលារៀន ងាកមកផ្គត់ផ្គង់ជម្រើសដែលមានសុវត្ថិភាពពេញលេញ។'
+  ]},
+ {n:'ទី៤', t:'សុខភាពផ្លូវចិត្ត និងអនាម័យ (WASH)', icon:'🧠', tag:'WASH · ផ្លូវចិត្ត',
+  sum:'បង្កើតបន្ទប់សុខភាពសិក្សាដែលមានឯកជនភាព ជា Safe Space សម្រាប់ប្រឹក្សាយោបល់ផ្លូវចិត្ត សុខភាពបន្តពូជ និងការសង្គ្រោះបឋម។',
+  body:[
+   'ការថែទាំសុខភាពផ្លូវចិត្ត និងអនាម័យ (WASH) ត្រូវបានកំណត់ជាអាទិភាព តាមរយៈការបង្កើត និងប្រកាសរដិឈ្មោះការបន្ទប់សុខភាពសិក្សាដែលមានឯកជនភាព។',
+   'បន្ទប់សុខភាពនេះ ដើរតួជាទីធ្លាសុវត្ថិភាព (Safe Space) សម្រាប់ផ្តល់សេវាប្រឹក្សាយោបល់ផ្លូវចិត្ត សុខភាពបន្តពូជ ការសង្គ្រោះបឋម និងការផ្តល់ផ្គង់ទឹកស្អាត–អនាម័យត្រឹមត្រូវ។',
+   'វត្តមាននៃទីធ្លាកបនេះ ជួយលុបបំបាត់ការរើសអើង និងការមាក់ងាយ (Stigma) ដែលធ្វើឱ្យសិស្សានុសិស្សហ៊ានបើកចំហរនិយាយពីបញ្ហារាងកាយ និងផ្លូវចិត្តរបស់ពួកគេប្រកបដោយសេចក្តីទុកចិត្ត។'
+  ]},
+ {n:'ទី៥', t:'វប្បធម៌គ្រូបង្រៀនគំរូ', icon:'👩‍🏫', tag:'ធនធានមនុស្ស',
+  sum:'គុណភាពនៃប្រព័ន្ធអប់រំមិនអាចលើសពីគុណភាពនៃគ្រូបង្រៀនឡើយ — គោលដៅគឺបង្កើត «វិស្វករនៃព្រលឹង និងសុខុមាលភាពសិស្ស»។',
+  body:[
+   'ផែនការនេះមានគោលដៅអភិវឌ្ឍសមត្ថភាពគ្រូបង្រៀនឱ្យក្លាយជា «វិស្វករនៃព្រលឹង និងសុខុមាលភាពសិស្ស» ដែលមានកាយសម្បទារឹងមាំ សីលធម៌ខ្ពស់ និងសមត្ថភាពគរុកោសល្យឆ្លើយតបនឹងវប្បធម៌សិស្ស (Culturally Responsive)។',
+   'គ្រូបង្រៀនដែលពោរពេញដោយថាមពល និងការយកចិត្តទុកដាក់ គឺជាគំរូរស់រវើក (Role Model) ដែលជម្រុញឱ្យសិស្សានុសិស្សយកតម្រាប់តាម ទាំងក្នុងការសិក្សា និងការរស់នៅប្រចាំថ្ងៃ។'
+  ]}
+];
+
+const PILLARS = [
+ {i:1,icon:'⚖️',t:'ក្របខណ្ឌច្បាប់ និងយន្តការ',
+  d:'បង្កើតគណៈកម្មការសុខភាពសិក្សាតាមសាលារៀន និងធ្វើបច្ចុប្បន្នកម្មបទបញ្ជាផ្ទៃក្នុង ដោយដាក់បញ្ចូលការហាមឃាត់ភេសជ្ជៈប៉ូវកម្លាំង បារី និងថ្នាំជក់អេឡិចត្រូនិក។',
+  x:'នេះជាមូលដ្ឋានច្បាប់ដែលធ្វើឱ្យវិធានការផ្សេងទៀតមានអានុភាពពិតប្រាកដ។ បើគ្មានបទបញ្ជាផ្ទៃក្នុងជាលាយលក្ខណ៍អក្សរទេ ការហាមឃាត់នឹងអាស្រ័យលើឆន្ទៈបុគ្គល និងបាត់បង់ភាពជាប់លាប់នៅពេលប្តូរថ្នាក់ដឹកនាំ។'},
+ {i:2,icon:'🩺',t:'ការលើកកម្ពស់សុខភាពចាំបាច់',
+  d:'បន្ទប់សុខភាព សម្ភារៈសង្គ្រោះបឋម ការពិនិត្យកំហើញ មាត់ធ្មេញ កាយសម្បទា និងការផ្តល់ថ្នាំទម្លាក់ព្រូន/វ៉ាក់សាំងតាមកាលកំណត់។',
+  x:'គោលដៅជាក់លាក់៖ ១០០% នៃសិស្សទទួលបានការពិនិត្យយ៉ាងហោចណាស់ ២ ដងក្នុងមួយឆ្នាំ ដោយសហការជាមួយមណ្ឌលសុខភាពមូលដ្ឋាន។'},
+ {i:3,icon:'🍎',t:'ការផ្តល់អាហារូបត្ថម្ភ',
+  d:'អាហារដ្ឋានស្តង់ដារ កិច្ចសន្យាអនាម័យជាមួយអាជីវករ ការហាមឃាត់ភេសជ្ជៈប៉ូវកម្លាំង និង «សួនបន្លែវិលជុំ» ក្នុងសាលា។',
+  x:'«សួនបន្លែវិលជុំ» ជាយុទ្ធសាស្ត្រទ្វេគុណ — ផ្គត់ផ្គង់បន្លែសុវត្ថិភាពសម្រាប់កម្មវិធីអាហារូបត្ថម្ភ ព្រមទាំងបង្រៀនសិស្សពីបំណិនជីវិត កសិកម្មធន់ដែរ ផ្នែកហេដ្ឋារចនាសម្ព័ន្ធរឹង និងការជួសជុល។'},
+ {i:4,icon:'🚰',t:'ទឹកស្អាត និងអនាម័យ (WASH)',
+  d:'ស្ថានីយលាងដៃ បង្គន់អនាម័យដាច់ដោយឡែករវាងសិស្សប្រុស–ស្រី និងការផ្គត់ផ្គង់ទឹកស្អាតសម្រាប់បរិភោគជាប្រចាំ។',
+  x:'វាយតម្លៃតាមអភិក្រមផ្កាយបី (Three Star Approach) ជាក្របខណ្ឌជាតិដែលអនុញ្ញាតឱ្យសាលារៀនរីកចម្រើនជាដំណាក់កាល ដោយមិនទាមទារការវិនិយោគធំភ្លាមៗ។'},
+ {i:5,icon:'🌳',t:'បរិស្ថានសិក្សាសុវត្ថិភាព',
+  d:'ដាំរុក្ខជាតិយកម្លប់ រៀបចំទីលានហាត់ប្រាណ និងសម្អាតបរិវេណសាលារៀនជាក្រុមរៀងរាល់ថ្ងៃ។',
+  x:'ការសម្អាតជាក្រុមបង្កើត «សម្ពាធមិត្តភក្តិវិជ្ជមាន» (Positive Peer Pressure) ដែលជួយបំប្លែងទម្លាប់ថ្មីឱ្យទៅជាការស្ម័គ្រចិត្តរបស់សិស្សខ្លួនឯង។'},
+ {i:6,icon:'🛡️',t:'សន្តិសុខ និងសណ្តាប់ធ្នាប់',
+  d:'គ្រប់គ្រងច្រកចេញចូល ការពារពីគ្រឿងញៀន គ្រឿងស្រវឹង និងអំពើហិង្សា/ការបំភិតបំភ័យ (Bullying)។',
+  x:'សម្របសម្រួលជាមួយអាជ្ញាធរដែនដី (CCWC ឃុំ/សង្កាត់) ដែលទទួលបន្ទុកកិច្ចការនារី និងកុមារ រួមទាំងសុវត្ថិភាពផ្លូវដំណើរទៅមកសាលា។'},
+ {i:7,icon:'📚',t:'ការអប់រំសុខភាព',
+  d:'បញ្ចូលការបង្រៀនមុខវិជ្ជាអប់រំសុខភាព (WASH &amp; Health Education) យ៉ាងតិច ១ម៉ោង/សប្តាហ៍ តាមកម្មវិធីសិក្សា។',
+  x:'ខ្លឹមសារត្រូវផ្សារភ្ជាប់ជាមួយយុទ្ធនាការ SBCC ដែលផ្តោតលើ «ហេតុអ្វី» (Why) មិនមែនត្រឹមតែ «អ្វី» នោះទេ។'},
+ {i:8,icon:'🧼',t:'ការអនុវត្តបំណិនសុខភាព',
+  d:'ការលាងដៃជាក្រុមដោយមានសាប៊ូ ការដុសធ្មេញ និងការហាត់ប្រាណជាប្រចាំតាមថ្នាក់។',
+  x:'គោលដៅចុងក្រោយគឺ «ទម្លាប់ស្វ័យប្រវត្តិ» (Automation of Habits) — សិស្សអនុវត្តដោយមិនចាំបាច់មានការរំលឹក ហើយនាំទម្លាប់នេះទៅផ្ទះ។'},
+ {i:9,icon:'🤝',t:'ការចូលរួមរបស់ភាគីពាក់ព័ន្ធ',
+  d:'សហការជាមួយមាតាបិតា អាជ្ញាធរមូលដ្ឋាន មណ្ឌលសុខភាព និងអង្គការដៃគូ (WFP, RHAC, UNFPA)។',
+  x:'ការចូលរួមរបស់សហគមន៍គឺជាគន្លឹះឆ្ពោះទៅរកការកសាងស្វ័យភាពសាលារៀន (School Autonomy) ប្រកបដោយគណនេយ្យភាព។'}
+];
+
+const PHASES = [
+ {p:'ដំណាក់កាលទី ១', time:'ខែទី ១–២', title:'ការរៀបចំចង្កូតអភិបាលកិច្ច (Governance Set-up)', color:'#004792',
+  items:[
+   ['បង្កើតគណៈកម្មការសុខភាពសិក្សាតាមសាលារៀន','សមាសភាពរួមមាន៖ នាយកសាលា គ្រូទទួលបន្ទុកបន្ទប់សុខភាព គ្រូអប់រំកាយ តំណាងសហគមន៍ និងតំណាងមាតាបិតា/សង្កាត់។ ការប្រមូលផ្តុំអង្គភាពពាក់ព័ន្ធ ធានាបាននូវការធ្វើសេចក្តីសម្រេចចិត្តដោយមានការឯកភាព និងមានការគាំទ្រធនធានពីសហគមន៍មូលដ្ឋាន។'],
+   ['ធ្វើបច្ចុប្បន្នកម្មបទបញ្ជាផ្ទៃក្នុងសាលា','ដាក់បញ្ចូលការហាមឃាត់ភេសជ្ជៈប៉ូវកម្លាំង និងបារី/ថ្នាំជក់អេឡិចត្រូនិក ព្រមទាំងរៀបចំកិច្ចសន្យាអនាម័យជាមួយអាជីវករលក់ដូរក្នុងអាហារដ្ឋានសាលា។'],
+   ['បង្កើត «សួនបន្លែវិលជុំ»','យុទ្ធសាស្ត្រទ្វេគុណ៖ ផ្គត់ផ្គង់បន្លែសុវត្ថិភាពសម្រាប់កម្មវិធីអាហារូបត្ថម្ភ ព្រមទាំងបង្រៀនសិស្សពីបំណិនជីវិត កសិកម្មធន់ដែរ និងការជួសជុលថែទាំ។'],
+   ['វិនិយោគលើហេដ្ឋារចនាសម្ព័ន្ធរឹង','សាងសង់/ជួសជុលបន្ទប់សុខភាពសិក្សា ស្ថានីយលាងដៃ បង្គន់អនាម័យដាច់ដោយឡែករវាងសិស្សប្រុស–ស្រី ព្រមទាំងទីលានកីឡា (បាល់ទាត់ បាល់ទះ បាល់បោះ វាយកូនឡែក) ដែលជាកត្តាចាំបាច់មិនអាចខ្វះបាន។']
+  ]},
+ {p:'ដំណាក់កាលទី ២', time:'ខែទី ៣–១០', title:'ប្រតិបត្តិការប្រចាំថ្ងៃ និងប្រចាំសប្តាហ៍ (Daily Operations)', color:'#0b63c5',
+  items:[
+   ['ការអប់រំសុខភាព ១ម៉ោង/សប្តាហ៍','សាលារៀនត្រូវបញ្ចូលការបង្រៀនមុខវិជ្ជាអប់រំសុខភាព (WASH &amp; Health Education) យ៉ាងតិច ១ម៉ោង/សប្តាហ៍ តាមកម្មវិធីសិក្សា។'],
+   ['ការដុសធ្មេញ និងសម្អាតបរិស្ថានជាក្រុម','អនុវត្តរៀងរាល់ថ្ងៃ ដើម្បីបង្កើត «សម្ពាធមិត្តភក្តិវិជ្ជមាន» (Positive Peer Pressure) ដែលជួយបំប្លែងទម្លាប់ថ្មីឱ្យទៅជាការស្ម័គ្រចិត្ត។'],
+   ['ការពិនិត្យសុខភាពបឋម','កំហើញ មាត់ធ្មេញ កាយសម្បទា និងការផ្តល់ថ្នាំទម្លាក់ព្រូន ឬវ៉ាក់សាំងតាមកាលកំណត់។'],
+   ['យុទ្ធនាការ SBCC ស្តីពីអាហារូបត្ថម្ភ','Social and Behavior Change Communication — អនុវត្តជាមួយអង្គការដៃគូដូចជាកម្មវិធីស្បៀងអាហារពិភពលោក (WFP)។ ផ្តោតលើហេតុផល «ហេតុអ្វី» (Why) ទៅកាន់សិស្ស និងមាតាបិតា ដើម្បីផ្លាស់ប្តូរតម្រូវការជ្រើសរើសចំណីអាហារ គួបផ្សំនឹងកម្មវិធី «អាហារថ្ងៃត្រង់មានជាតិពុលទាប និងជីវជាតិខ្ពស់»។'],
+   ['ក្លឹបកីឡាសាលារៀន ២ម៉ោង/សប្តាហ៍','សកម្មភាពកីឡាក្រៅម៉ោងត្រូវក្លាយជាយន្តការដំណើរការ។ គ្រូទាំងនេះត្រូវបានដឹកនាំដោយគ្រូអប់រំកាយ ដែលបានបន្តការបណ្តុះបណ្តាលបន្ត (CPD) ពីវិទ្យាស្ថានជាតិអប់រំកាយ និងកីឡា (NIPES)។'],
+   ['ការថែទាំសុខភាពផ្លូវចិត្ត (Emotional Well-being)','តាមរយៈសេវាប្រឹក្សាយោបល់ក្នុងបន្ទប់សុខភាព ដោយរក្សាការសម្ងាត់ ព្រមទាំងការបង្កើតបរិយាកាសសុវត្ថិភាព ដើម្បីលុបបំបាត់ការរើសអើង និងអំពើហិង្សាតាមគ្រប់រូបភាព។']
+  ]},
+ {p:'ដំណាក់កាលទី ៣', time:'ប្រចាំឆ្នាំ', title:'ព្រឹត្តិការណ៍ធំ និងការវាស់វែងប្រចាំឆ្នាំ (Annual Events)', color:'#d4af37',
+  items:[
+   ['ទិវាសុខភាព និងកីឡាសាលារៀន','មិនត្រឹមតែជាវេទិកាសម្រាប់ការប្រកួតកីឡាជ្រើសរើសដើមកម្រិតចាំសាលា ប៉ុន្តែរួមទាំងការតាំងពិព័រណ៍អាហារូបត្ថម្ភ និងការសម្តែងសិល្បៈប៉ុណ្ណោះទេ ប៉ុន្តែជាការប្រមូលផ្តុំមោទនភាពសហគមន៍។'],
+   ['យុទ្ធនាការរដើម្បីសុខភាព និងបរិស្ថាន','រៀបចំឡើងជាកូនសហគមន៍ ដើម្បីប្រើប្រាស់ជាយន្តការរៀបចំរមូលនិធិ (Crowdfunding mechanism) សម្រាប់ទ្រទ្រង់និរន្តរភាពនៃបន្ទប់សុខភាព ធានាថាសាលារៀនមានលទ្ធភាពហិរញ្ញវត្ថុ ដើម្បីដំណើរការសកម្មភាពនៅឆ្នាំបន្តបន្ទាប់ ដោយមិនពឹងផ្នែកតែលើថវិការដ្ឋ។']
+  ]}
+];
+
+const STAKEHOLDERS = [
+ {g:'អ្នកទទួលខុសត្រូវ (Responsible Persons)',k:'resp',who:'នាយក / នាយករងសាលារៀន',
+  role:'ដើរតួជាមេបញ្ជាការដឹកនាំប្រតិបត្តិការ រៀបចំផែនការ និងគ្រប់គ្រងការបែងចែកធនធានអនុវត្តប្រកបដោយតម្លាភាព។'},
+ {g:'អ្នកទទួលខុសត្រូវ (Responsible Persons)',k:'resp',who:'គណៈកម្មការសុខភាពសិក្សាសាលា',
+  role:'សេនាធិការផ្ទាល់ក្នុងកម្រិតមូលដ្ឋាន ធ្វើការសម្រេចចិត្តជាសមូហភាព ត្រួតពិនិត្យការអនុវត្តបញ្ជាផ្ទៃក្នុង និងដោះស្រាយបញ្ហាប្រឈមជាបន្ទាន់។'},
+ {g:'អ្នកទទួលខុសត្រូវ (Responsible Persons)',k:'resp',who:'គ្រូទទួលបន្ទុកបន្ទប់សុខភាព',
+  role:'អ្នកឯកទេសខ្សែក្រៀមជួរមុខ គ្រប់គ្រងបន្ទប់សុខភាព ផ្តល់ការសង្គ្រោះបឋម ប្រឹក្សាយោបល់ផ្លូវចិត្ត និងតាមដានកំណត់ត្រាសុខភាពសិស្ស។'},
+ {g:'អ្នកទទួលខុសត្រូវ (Responsible Persons)',k:'resp',who:'គ្រូអប់រំកាយ និងកីឡា',
+  role:'អ្នកជំរុញទឹកចិត្តសិស្សឱ្យយកឈ្នះភាពអសកម្មរាងកាយ ដឹកនាំការហាត់ប្រាណ បង្កបង្កើតក្លឹបកីឡា និងរៀបចំការប្រកួតផ្សេងៗនានា។'},
+ {g:'អ្នកចូលរួម (Participants)',k:'part',who:'សិស្សានុសិស្សគ្រប់កម្រិតថ្នាក់',
+  role:'ភ្នាក់ងារនៃការផ្លាស់ប្តូរ (Agents of Change) — ចូលរួមអនុវត្តយ៉ាងសកម្មនូវបំណិនអនាម័យ លេងកីឡា និងនាំយកទម្លាប់ល្អៗទៅអនុវត្តក្នុងគ្រួសាររៀងៗខ្លួន។'},
+ {g:'អ្នកចូលរួម (Participants)',k:'part',who:'លោកគ្រូ–អ្នកគ្រូបង្រៀនតាមមុខវិជ្ជា',
+  role:'ដើរតួជាគំរូ (Role Model) ខាងសុខភាព សីលធម៌ និងជួយសង្កេតមើលអាកប្បកិរិយាប្រែប្រួលផ្លូវចិត្តរបស់សិស្សក្នុងថ្នាក់។'},
+ {g:'អ្នកចូលរួម (Participants)',k:'part',who:'បុគ្គលិក និងអាជីវករអាហារដ្ឋាន',
+  role:'ខ្សែការពារទីមួយផ្នែកអាហារូបត្ថម្ភ — គោរពយ៉ាងតឹងរឹងតាមបទបញ្ជាផ្ទៃក្នុងការលក់ដូរ និងរក្សាអនាម័យចម្អិនអាហារប្រកបដោយសុវត្ថិភាព។'},
+ {g:'អ្នកពាក់ព័ន្ធ (Stakeholders)',k:'stake',who:'មាតាបិតា / អាណាព្យាបាលសិស្ស',
+  role:'ប្រភពនៃការគាំទ្រពីក្រៅខ្លួន — ជំរុញការហូបចុកស្អាតនៅផ្ទះ និងចូលរួមគាំទ្រវិភាគទានសម្ភារៈតាមរយៈការរៀបចំរមូលនិធិសហគមន៍។'},
+ {g:'អ្នកពាក់ព័ន្ធ (Stakeholders)',k:'stake',who:'អាជ្ញាធរដែនដី (CCWC ឃុំ/សង្កាត់)',
+  role:'គណៈកម្មាធិការទទួលបន្ទុកកិច្ចការនារី និងកុមារ — ជួយសម្របសម្រួលសន្តិសុខ សុវត្ថិភាពផ្លូវដំណើរ និងដោះស្រាយបញ្ហាគាំពារកុមារក្រៅសាលា។'},
+ {g:'អ្នកពាក់ព័ន្ធ (Stakeholders)',k:'stake',who:'មន្ត្រីសុខាភិបាល / មណ្ឌលសុខភាព',
+  role:'ដៃគូបច្ចេកទេស — ចុះពិនិត្យសុខភាពសិស្ស ផ្តល់វ៉ាក់សាំង ថ្នាំទម្លាក់ព្រូន និងវាយតម្លៃស្ថានភាពជំងឺឆ្លងតាមសហគមន៍សាលារៀន។'},
+ {g:'អ្នកពាក់ព័ន្ធ (Stakeholders)',k:'stake',who:'អង្គការដៃគូ (WFP, RHAC, UNFPA)',
+  role:'ផ្តល់ការបណ្តុះបណ្តាល ជំនួយបច្ចេកទេស និងសម្ភារៈបន្ថែម ដូចជាការជួយដំណើរការបន្ទប់សុខភាព និងយុទ្ធនាការ SBCC។'},
+ {g:'អ្នកពាក់ព័ន្ធ (Stakeholders)',k:'stake',who:'ក្រសួង/មន្ទីរអប់រំ យុវជន និងកីឡា',
+  role:'អ្នកតម្រង់ទិសគោលនយោបាយ ផ្តល់ក្របខណ្ឌវាយតម្លៃ ធ្វើសវនកម្ម (Audit) និងធានាគណនេយ្យភាពនៃការអនុវត្តទូទាំងប្រទេស។'}
+];
+
+const STARS = [
+ {n:1,t:'សាលារៀនផ្កាយមួយ (One Star School)',
+  s:'កម្រិតមូលដ្ឋាន៖ បង្គន់អនាម័យដំណើរការយ៉ាងហោចណាស់មួយសម្រាប់សិស្សស្រី និងមួយសម្រាប់សិស្សប្រុស។',
+  d:['អ្វីដែលជាការកែទម្រង់សំខាន់នោះគឺ ការតម្រូវឱ្យសិស្សានុសិស្សចូលរួមសម្អាតបង្គន់ប្រចាំថ្ងៃក្រោមការត្រួតពិនិត្យពីគ្រូ ដោយមិនចាត់ទុកជាទណ្ឌកម្ម (Punishment) នោះឡើយ។',
+      'ទន្ទឹមនឹងនេះ ត្រូវមានការអនុវត្តលាងដៃជាក្រុមប្រចាំថ្ងៃដោយមានសាប៊ូ និងទឹក។',
+      'សកម្មភាពទាំងនេះផ្លាស់ប្តូរវប្បធម៌នៃការទទួលខុសត្រូវរួម និងបំបាត់ការខ្ជិលច្រអូសចំពោះអនាម័យផ្ទាល់ខ្លួន។']},
+ {n:2,t:'សាលារៀនផ្កាយពីរ (Two Star School)',
+  s:'បង្គន់អនាម័យគ្រប់គ្រាន់តាមសមាមាត្រសិស្ស និងយ៉ាងហោចណាស់មួយសម្រាប់សិស្សមានពិការភាព។',
+  d:['សាលារៀនត្រូវមានបង្គន់អនាម័យគ្រប់គ្រាន់តាមសមាមាត្រសិស្ស ហើយត្រូវមានយ៉ាងហោចណាស់បង្គន់មួយដែលបម្រើដល់សិស្សមានពិការភាព (Inclusive accessibility)។',
+      'ការពង្រឹងសកម្មភាពអប់រំអនាម័យ ការគ្រប់គ្រងសំណល់រឹង និងការផ្តល់ទឹកស្អាតសម្រាប់បរិភោគជាប្រចាំ គឺជាចំណុចស្នូល។']},
+ {n:3,t:'សាលារៀនផ្កាយបី (Three Star School)',
+  s:'គោលដៅចុងក្រោយ៖ សម្រេចបានពេញលេញនូវស្តង់ដារអប្បបរមាថ្នាក់ជាតិ (National Standards for WASH in Schools)។',
+  d:['សាលារៀនមានហេដ្ឋារចនាសម្ព័ន្ធធន់នឹងអាកាសធាតុ និងមានយន្តការគាំទ្រវិភាគទានពីសហគមន៍ដោយរឹងមាំ។',
+      'ការតាមដានទិន្នន័យនៃអភិក្រមនេះ គឺបែបតាមគោលការណ៍ «អ្វីដែលត្រូវបានត្រួតពិនិត្យ គឺនឹងត្រូវបានអនុវត្ត» (What gets monitored gets done)។',
+      'តាមរយៈការវាយតម្លៃខ្លួនឯងប្រចាំឆ្នាំ នាយកដ្ឋានសុខភាពសិក្សាអាចកំណត់បានយ៉ាងច្បាស់នូវចំណុចខ្វះខាត និងចាត់វិធានការដោះស្រាយទាន់ពេលវេលា។']}
+];
+
+const KPIS = [
+ {v:'១០០%',l:'សិស្សចេះលេងកីឡាយ៉ាងតិច ១ ប្រភេទ និងចូលរួមក្លឹបកីឡាសាលារៀន',
+  d:'សូចនាករបរិមាណទី១។ វាស់តាមបញ្ជីសមាជិកក្លឹប និងកំណត់ត្រាការចូលរួមប្រចាំសប្តាហ៍។'},
+ {v:'២៥%',l:'កាត់បន្ថយអត្រាអវត្តមានដោយសារជំងឺ (រាគរូស គ្រុនផ្តាសាយ ជំងឺផ្លូវដង្ហើម)',
+  d:'ក្នុងការវិភាគរោគរាតត្បាតសាធារណៈ (Public Health Epidemiology) ការថយចុះនៃជំងឺទាំងនេះគឺជាភស្តុតាងផ្ទាល់ដែលបញ្ជាក់ពីប្រសិទ្ធភាពនៃការអនុវត្តបំណិនលាងដៃ និងការថែរក្សាបរិស្ថាន។'},
+ {v:'១០០%',l:'សិស្សទទួលបានការពិនិត្យកំហើញ មាត់ធ្មេញ និងកាយសម្បទា ២ដង/ឆ្នាំ',
+  d:'អនុវត្តរួមជាមួយមណ្ឌលសុខភាពមូលដ្ឋាន ហើយត្រូវកត់ត្រាក្នុងសៀវភៅសុខភាពសិស្សម្នាក់ៗ។'},
+ {v:'០%',l:'ភេសជ្ជៈប៉ូវកម្លាំង និងចំណីអាហារហាមឃាត់ ដែលតាំងលក់ក្នុង/ជុំវិញសាលា',
+  d:'ស្របតាមសេចក្តីណែនាំលេខ ៧១។ វាស់តាមបញ្ជីផ្ទៀងផ្ទាត់ប្រចាំខែរបស់គណៈកម្មការសុខភាពសិក្សា។'},
+ {v:'📈',l:'ចំនួនសិស្សដែលទទួលបានការប្រឹក្សាផ្លូវចិត្ត និងសុខភាពបន្តពូជ',
+  d:'ត្រូវមានកំណត់ត្រាស្ថិតិត្រឹមត្រូវ ដើម្បីបង្ហាញពីកម្រិតនៃការជឿទុកចិត្តរបស់សិស្សចំពោះបន្ទប់សុខភាព។'},
+ {v:'៥ / ២៧',l:'ស្តង់ដារូបវន្ត ៥ និងសូចនាករលម្អិត ២៧ នៃ «ស្តង់ដាសាលារៀនគំរូ»',
+  d:'ក្របខណ្ឌរបស់ក្រសួងអប់រំ យុវជន និងកីឡា។ ការលើកកម្ពស់សុខភាពសិក្សា និងអាហារូបត្ថម្ភក៏ដូចជាកិច្ចការពារកុមារ ស្ថិតនៅក្នុងចំណុចស្នូលនៃការវាយតម្លៃ។'}
+];
+
+const MONITOR = [
+ {n:'ស្រទាប់ទី ១',t:'ការត្រួតពិនិត្យប្រចាំខែ (Internal Monitoring)',
+  d:'ដោយគណៈកម្មការសុខភាពសិក្សាតាមសាលារៀនផ្ទាល់ ដែលត្រូវចុះធ្វើតេស្តបញ្ជីផ្ទៀងផ្ទាត់ (Checklist) លើអនាម័យអាហារដ្ឋាន បង្គន់ WASH និងបន្ទប់សុខភាព។'},
+ {n:'ស្រទាប់ទី ២',t:'របាយការណ៍ប្រចាំត្រីមាស និងឆមាស',
+  d:'ត្រូវធ្វើទូនការយោបល់ជាមួយមន្ទីរអប់រំក្រុង/ស្រុក/ខណ្ឌ ដើម្បីពិនិត្យ និងកែសម្រួលចង្វាក់ខ្វះខាត។'},
+ {n:'ស្រទាប់ទី ៣',t:'ការវាយតម្លៃតាម «ស្តង់ដាសាលារៀនគំរូ» និងសវនកម្មខាងក្រៅ (External Audit)',
+  d:'ដោយមន្ត្រីអាជ្ញាធរសវនកម្មជាតិ និងក្រសួងអប់រំ យុវជន និងកីឡា។ ការរកឃើញពីការធ្វើសវនកម្ម ដូចជាករណីសិក្សានៅខេត្តឧត្តរមានជ័យ បានជួយផ្តល់ជាអនុសាសន៍កែលម្អយ៉ាងសំខាន់ក្នុងការកំណត់អាទិភាពនៃការវិនិយោគលើហេដ្ឋារចនាសម្ព័ន្ធសុខភាព ធានាបាននូវតម្លាភាព និងនិរន្តរភាពនៃការអនុវត្តគម្រោង។'}
+];
+
+const IMPACTS = [
+ {icon:'💰',t:'វិនិយោគលើមូលធនមនុស្ស (Human Capital Investment)',
+  d:'តាមទស្សនៈនៃការវិភាគសេដ្ឋកិច្ច–សង្គម ការកសាងប្រព័ន្ធសុខភាពសិក្សាគ្រប់ជ្រុងជ្រោយ គឺជាយុទ្ធសាស្ត្រវិនិយោគដែលមានអត្រាផលចំណេញ (Return on Investment) កម្រិតខ្ពស់បំផុតក្នុងរយៈពេលវែង។ ការវាយតម្លៃដោយសម្លឹងមើលត្រឹមតែលទ្ធផលក្នុងបរិវេណសាលា គឺជាទស្សនៈចង្អៀតចង្អល់។'},
+ {icon:'🫀',t:'បង្ការជំងឺមិនឆ្លង (NCDs)',
+  d:'ការអនុវត្តម៉ឺងម៉ាត់នូវការហាមឃាត់ភេសជ្ជៈប៉ូវកម្លាំង និងការបង្កើតទម្លាប់ហាត់ប្រាណប្រចាំជីវិត នឹងកាត់បន្ថយបន្ទុកចំណាយរបស់ប្រព័ន្ធសុខាភិបាលជាតិយ៉ាងធំធេងនៅទសវត្សរ៍ខាងមុខ។ ជំងឺទឹកនោមផ្អែម និងបញ្ហាសរសៃឈាមបេះដូង ដែលបង្កឡើងដោយការទទួលទានជាតិស្ករលើសកម្រិត និងភាពអសកម្មរាងកាយ គឺជាការគំរាមកំហែងដល់ផលិតភាពសេដ្ឋកិច្ច។'},
+ {icon:'🛡️',t:'អន្តរាគមន៍បង្ការទុកជាមុន (Proactive Prevention)',
+  d:'ការអនុវត្តអន្តរាគមន៍កែប្រែឥរិយាបថ (SBCC) តាំងពីកម្រិតសាលារៀន គឺជាវិធានការបង្ការទុកជាមុន ដែលមានប្រសិទ្ធភាពចំណាយ (Cost-effective) ជាងការព្យាបាលនៅពេលជំងឺកើតឡើង។'},
+ {icon:'🏠',t:'ស្ថិរភាពប្រាក់ចំណូលគ្រួសារ',
+  d:'ការកែលម្អប្រព័ន្ធទឹកស្អាត និងអនាម័យ (WASH) ជួយការពារស្ថិរភាពប្រាក់ចំណូលរបស់គ្រួសារសិស្ស។ ការថយចុះនៃអត្រាឈឺថ្កាត់របស់កុមារ មានន័យថាមាតាបិតាមិនចាំបាច់ខាតបង់ពេលវេលាការងារដើម្បីមើលថែកូន និងមិនចាត់បង់ប្រាក់សន្សំសម្រាប់ថ្លៃព្យាបាលជំងឺ។'},
+ {icon:'🎓',t:'ការសង្គ្រោះយុវជនពីហានិភ័យសង្គម',
+  d:'បន្ទប់សុខភាពសិក្សាដែលដើរតួនាទីផ្តល់សេវាប្រឹក្សាផ្លូវចិត្ត គឺជាយន្តការសង្គ្រោះយុវជនពីហានិភ័យសង្គមផ្សេងៗ ដូចជាបាក់ទឹកចិត្ត ឬការបោះបង់ការសិក្សា ដោយធានាថាពួកគេអាចបន្តការសិក្សារហូតក្លាយជាកម្លាំងពលកម្មជំនាញសម្រាប់សេដ្ឋកិច្ចជាតិ។'}
+];
+
+const REFS = [
+ ['ផែនការសកម្មភាពជាតិ ស្តីពី — UNFPA Cambodia','https://cambodia.unfpa.org/sites/default/files/pub-pdf/nap_on_sh_2021-2030_approved_kh.pdf'],
+ ['វេជ្ជបណ្ឌិត ឆាយ គីមសុទ្ធារី៖ លើកកម្ពស់សុខភាពសិក្សាជាចំណុចគន្លឹះធានាការ — ams education','https://education.ams.com.kh/news-national-education/dr-chhay-kim-sotheavy-promoting-health-study-is-the-key-to-ensure-quality-education/'],
+ ['វប្បធម៌បណ្តុះការអប់រំកាយ និងសុខភាពនៅតាមសាលារៀន (.docx)',''],
+ ['សំណុំសកម្មភាព ៩ ចំណុចជំរុញការអនុវត្តសុខភាពសិក្សាគ្រប់ជ្រុងជ្រោយនៅតាម — ams education','https://education.ams.com.kh/education-update/national/news/9-point-set-of-activities-to-promote-the-implementation-of-comprehensive-health-education-in-educational-institutions/'],
+ ['ក្រសួងអប់រំ ដាក់ចេញអនុវត្តស្តង់ដារសាលារៀនគំរូ ចំនួន ៥ សម្រាប់មត្តេយ្យ រហូតដល់មធ្យមសិក្សា — Kampuchea Thmey Daily','https://www.kampucheathmey.com/local-news/612619'],
+ ['ការអនុវត្តស្តង់ដារសាលារៀនគំរូមានវិធីសាស្ត្រច្បើន ដើម្បីឱ្យវិស័យអប់រំកាន់តែមានគុណភាព — YouTube','https://www.youtube.com/watch?v=bI9LqCVvR3w'],
+ ['Progress on drinking water, sanitation and hygiene in schools — Joint Monitoring Programme','https://washdata.org/report/jmp-2022-wins-data-update-pandemic-preparedness'],
+ ['FIELD GUIDE: Three Star Approach for WASH in Schools — MIMU','https://themimu.info/sites/themimu.info/files/documents/Guide_3_Star_Approach_for_WASH_in_Schools.pdf'],
+ ['Cambodian schools aim for the stars — Healthy DEvelopments','https://health.bmz.de/stories/cambodian-schools-aim-for-the-stars/'],
+ ['The Regional Fit for School Programme supports Ministries of Education in Cambodia, Indonesia, Lao PDR and the Philippines','https://sdgs.un.org/partnerships/regional-fit-school-programme-supports-ministries-education-cambodia-indonesia-lao-pdr'],
+ ['គណៈកម្មការទីឡរដ្ឋសភា៖ ការផ្តល់ «វ៉ាក់សាំងកូវីដដល់កុមារ» ជាជំហានទៅបើកសាលាឡើងវិញ — The Cambodia China Times','https://kh.cc-times.com/posts/6214'],
+ ['ស្តង់ដាសាលាបឋមសិក្សាគំរូ — សាលាឌីជីថល','https://sala.moeys.gov.kh/en/library/00001727'],
+ ['Water / WASH Project — KHEN Cambodia','https://www.khencambodia.org/water-project.html'],
+ ['WinS – ILE Cambodia – WASH In Schools','https://wins.deped.gov.ph/wp-content/uploads/2019/11/7th-WinS-ILE-ILE-Cambodia-Country-Video-Presentation.pdf'],
+ ['ក្រសួងអប់រំ យុវជន និងកីឡា (NEP Cambodia)','https://nepcambodia.org/'],
+ ['ក្រសួងអប់រំ ដាក់ចេញស្តង់ដារសាលារៀនគំរូចំនួន ៥ ដើម្បីពង្រឹងគុណភាពអប់រំ ចាប់ពីកម្រិតមត្តេយ្យសិក្សាដល់មធ្យមសិក្សា — Kampuchea Thmey Daily','https://www.kampucheathmey.com/local-news/749860'],
+ ['សកម្មភាពចុះជួយគាំទ្រការអនុវត្តកម្មវិធីសាលារៀនគំរូ តាមរយៈគម្រោង «វិទ្យាសាស្ត្រ និងបច្ចេកវិទ្យាសម្រាប់ការអប់រំកម្រិតមធ្យមសិក្សាទុតិយភូមិ» — STEP UP','https://sala.moeys.gov.kh/en/contents/686139868e26fc80ea7b242c'],
+ ['បទបង្ហាញ ការអនុវត្តស្តង់ដាសាលារៀនគំរូ 021223 — Scribd','https://www.scribd.com/presentation/707319717/'],
+ ['Executive Summary of the Performance Audit Report on the Promotion of Primary School Health in Oddar Meanchey Province (FY 2024) — អាជ្ញាធរសវនកម្មជាតិ','http://naa.gov.kh/wp-content/uploads/2025/09/Executive_Summary_of_the_Perfo rmance_Audit_Report_on_the_Promotion_of_Primary_School_Health_in_Oddar_Meanchey_Province_for_the_Fiscal_Year_2024_and_Related_Years.pdf'],
+ ['សេចក្តីណែនាំស្តង់ដាសាលារៀនគំរូ សម្រាប់ពិនិត្យ រៀបចំ និងអនុវត្ត — Scribd','https://www.scribd.com/document/753214645/'],
+ ['[ទិន្នន័យក្រាហ្វិក] UNICEF Cambodia — Climate rationale for water, sanitation and hygiene services in Cambodia (២០២៤): ទិន្នន័យ WASH ក្នុងសាលារៀន ៧៦% / ៦៨% / ៣២% (EMIS ២០២២–២០២៣) និងនិន្នាការ ៣០%→៦៨% (JMP ២០២២)','https://www.unicef.org/cambodia/media/8741/file/Climate%20rationale_WASH_Cambodia_full%20report_ENG_2024.pdf.pdf'],
+ ['[ទិន្នន័យក្រាហ្វិក] WHO / UNIATF — Prevention and control of noncommunicable diseases in Cambodia: NCDs ជាង ២/៣ នៃមរណភាព, ការខាតបង់សេដ្ឋកិច្ច ៦.៦% នៃ GDP (២០១៨)','https://uniatf.who.int/docs/librariesprovider22/default-document-library/cambodia-ncd-report.pdf'],
+ ['[ទិន្នន័យក្រាហ្វិក] WHO Western Pacific — 1 in 5 Cambodian adults are at risk of stroke as noncommunicable disease risks increase','https://www.who.int/westernpacific/newsroom/feature-stories/item/1-in-5-cambodian-adults-are-at-risk-of-stroke-as-noncommunicable-disease-risks-increase'],
+ ['[ទិន្នន័យក្រាហ្វិក] WHO/UNICEF JMP — Progress on drinking water, sanitation and hygiene in schools 2015–2023','https://washdata.org/reports/jmp-2024-wash-schools']
+];
+
+/* ============================================================
+   ២ក. មេឌា (រូបភាព · វីដេអូ · PDF) និងការកែអត្ថបទ
+   ============================================================ */
+const PICLAB={school:'សាលារៀនគំរូ',policy:'ក្របខណ្ឌគោលនយោបាយ និងបញ្ជីផ្ទៀងផ្ទាត់',sport:'ចលនាកីឡា និងការហាត់ប្រាណ',
+ nutrition:'អាហារូបត្ថម្ភ និងការហាមឃាត់ភេសជ្ជៈប៉ូវកម្លាំង',mental:'សុខភាពផ្លូវចិត្ត និងការយកចិត្តទុកដាក់',
+ teacher:'គ្រូបង្រៀនជាគំរូ',clinic:'បន្ទប់សុខភាពសិក្សា',water:'ស្ថានីយលាងដៃ និងទឹកស្អាត',env:'បរិស្ថានសិក្សាបៃតង',
+ security:'សន្តិសុខ និងសណ្តាប់ធ្នាប់',edu:'ការអប់រំសុខភាព',hygiene:'បំណិនលាងដៃ និងអនាម័យ',community:'ការចូលរួមរបស់ភាគីពាក់ព័ន្ធ',
+ garden:'សួនបន្លែវិលជុំ',checkup:'ការពិនិត្យសុខភាពប្រចាំ',monitor:'ការត្រួតពិនិត្យ និងបញ្ជីផ្ទៀងផ្ទាត់',
+ data:'ទិន្នន័យ និងសូចនាករ',economy:'ផលចំណេញសេដ្ឋកិច្ច',ncd:'ជំងឺមិនឆ្លង (NCDs)',grad:'លទ្ធផលអប់រំរយៈពេលវែង',
+ sanitation:'អនាម័យ និងបង្គន់សាលារៀន'};
+
+const EMPTYBOX='<div class="dz-empty"><div style="font-size:22px;line-height:1">➕</div>'
+ +'<div class="text-[10.5px] font-bold">ចុច ឬអូសឯកសារមកដាក់</div>'
+ +'<div class="text-[9px] opacity-65">រូបភាព · វីដេអូ · PDF</div></div>';
+
+let MEDIA={}, TEXTS={}, picTarget=null, SID=0, EDIT=false;
+
+const DB={
+  open(){ return new Promise((res,rej)=>{ const r=indexedDB.open('shReport',1);
+    r.onupgradeneeded=()=>{ r.result.createObjectStore('kv'); };
+    r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }); },
+  async get(k){
+    try{ const db=await DB.open();
+      return await new Promise(res=>{ const q=db.transaction('kv').objectStore('kv').get(k);
+        q.onsuccess=()=>res(q.result); q.onerror=()=>res(null); });
+    }catch(e){ try{ return JSON.parse(localStorage.getItem('sh_'+k)||'null'); }catch(_){ return null; } }
+  },
+  async set(k,v){
+    try{ const db=await DB.open();
+      await new Promise((res,rej)=>{ const q=db.transaction('kv','readwrite').objectStore('kv').put(v,k);
+        q.onsuccess=res; q.onerror=()=>rej(q.error); });
+      return true;
+    }catch(e){ try{ localStorage.setItem('sh_'+k,JSON.stringify(v)); return true; }catch(_){ return false; } }
+  }
+};
+
+let saveT=null;
+function queueSave(){ clearTimeout(saveT); saveT=setTimeout(()=>{ DB.set('media',MEDIA); DB.set('texts',TEXTS); },600); }
+
+function ytId(u){ const m=String(u).match(/(?:youtu\.be\/|v=|embed\/|shorts\/)([A-Za-z0-9_-]{11})/); return m?m[1]:null; }
+
+function mediaHTML(m){
+  if(!m) return EMPTYBOX;
+  const st='class="w-full rounded-lg object-cover" style="height:118px"';
+  if(m.t==='image') return '<img src="'+m.src+'" alt="'+(m.lab||'')+'" '+st+'>';
+  if(m.t==='video') return '<video src="'+m.src+'" preload="metadata" muted playsinline '+st
+      +' style="height:118px;background:#000;object-fit:cover"></video><span class="mbadge">▶ វីដេអូ</span>';
+  if(m.t==='yt') return '<img src="https://img.youtube.com/vi/'+m.id+'/mqdefault.jpg" alt="YouTube" '+st
+      +'><span class="mbadge">▶ YouTube</span>';
+  if(m.t==='pdf') return '<div class="pdfcard"><div style="font-size:26px;line-height:1">📄</div>'
+      +'<div class="text-[9.5px] font-bold" style="word-break:break-all">'+(m.name||'PDF')+'</div></div>'
+      +'<span class="mbadge">PDF</span>';
+  return EMPTYBOX;
+}
+
+function renderSlot(box){
+  const m=MEDIA[box.dataset.sid];
+  box.innerHTML=mediaHTML(m);
+  if(m) box.dataset.has='1'; else delete box.dataset.has;
+  const del=box.closest('.picwrap').querySelector('.pic-del');
+  if(del) del.classList.toggle('hidden',!m);
+  refreshSlots();
+}
+function refreshSlots(){
+  document.querySelectorAll('.mslot').forEach(a=>{
+    const b=a.querySelector('.picbox');
+    a.style.display=(EDIT||(b&&b.dataset.has))?'':'none';
+  });
+}
+
+function shrink(src,cb){
+  const im=new Image();
+  im.onload=function(){
+    const M=1600; let w=im.width,h=im.height;
+    if(Math.max(w,h)>M){ const k=M/Math.max(w,h); w=Math.round(w*k); h=Math.round(h*k); }
+    const c=document.createElement('canvas'); c.width=w; c.height=h;
+    c.getContext('2d').drawImage(im,0,0,w,h);
+    try{ cb(c.toDataURL('image/jpeg',0.82)); }catch(e){ cb(src); }
+  };
+  im.onerror=function(){ cb(src); };
+  im.src=src;
+}
+
+function putMedia(box,m){ MEDIA[box.dataset.sid]=Object.assign({lab:box.dataset.lab||''},m); renderSlot(box); queueSave(); }
+
+function addFile(box,f){
+  if(!f) return;
+  const r=new FileReader();
+  r.onload=function(){
+    if(f.type.indexOf('image/')===0) shrink(r.result,u=>putMedia(box,{t:'image',src:u,name:f.name}));
+    else if(f.type.indexOf('video/')===0) putMedia(box,{t:'video',src:r.result,name:f.name});
+    else if(f.type==='application/pdf') putMedia(box,{t:'pdf',src:r.result,name:f.name});
+    else alert('ប្រភេទឯកសារមិនគាំទ្រ — សូមប្រើរូបភាព វីដេអូ ឬ PDF');
+  };
+  r.readAsDataURL(f);
+}
+function addURL(box,u){
+  u=String(u).trim(); if(!u) return;
+  const y=ytId(u);
+  if(y) putMedia(box,{t:'yt',id:y,src:'https://www.youtube.com/embed/'+y});
+  else if(/\.pdf($|\?)/i.test(u)) putMedia(box,{t:'pdf',src:u,name:u.split('/').pop().split('?')[0]});
+  else if(/\.(mp4|webm|ogg|mov|m4v)($|\?)/i.test(u)) putMedia(box,{t:'video',src:u});
+  else putMedia(box,{t:'image',src:u});
+}
+function clearMedia(btn){
+  const box=btn.closest('.picwrap').querySelector('.picbox');
+  delete MEDIA[box.dataset.sid]; renderSlot(box); queueSave();
+}
+function pickFile(btn){ picTarget=btn.closest('.picwrap').querySelector('.picbox'); document.getElementById('picFile').click(); }
+function pickURL(btn){
+  const u=prompt('បញ្ចូល URL (រូបភាព · វីដេអូ · YouTube · PDF)៖');
+  if(u) addURL(btn.closest('.picwrap').querySelector('.picbox'),u);
+}
+
+function pic(k){
+  if(!k) return '';
+  const lab = typeof k==='string' ? (PICLAB[k]||'') : ((k&&k.lab)||'');
+  const sid = 's'+(++SID);
+  return `<div class="acc mslot mt-3" style="border:1px dashed var(--line);border-radius:.9rem;overflow:hidden">
+    <div class="acc-head flex items-center gap-2 px-4 py-2" onclick="event.stopPropagation();this.parentElement.classList.toggle('open')">
+      <span>🖼</span><span class="text-[11.5px] font-bold pri flex-1">ឯកសារភ្ជាប់</span>
+      <span class="caret muted text-[10px]">▾</span></div>
+    <div class="acc-body"><div class="p-3 pt-0 picwrap flex gap-3 items-start">
+      <div class="picbox" data-sid="${sid}" data-lab="${lab}">${EMPTYBOX}</div>
+      <div class="flex-1 min-w-0">
+        <div class="text-[11px] leading-relaxed font-semibold">${lab}</div>
+        <div class="text-[9px] muted mt-1 leading-relaxed">ចុចលើឯកសារដែលដាក់រួច ដើម្បីបើកមើលពេញអេក្រង់</div>
+        <div class="flex gap-2 mt-2 noprint editonly">
+          <button class="chip" onclick="event.stopPropagation();pickFile(this)">📁 ជ្រើសឯកសារ</button>
+          <button class="chip" onclick="event.stopPropagation();pickURL(this)">🔗 URL</button>
+          <button class="chip pic-del hidden" onclick="event.stopPropagation();clearMedia(this)">🗑 លុប</button>
+        </div>
+      </div>
+    </div></div></div>`;
+}
+
+/* ============================================================
+   ២. Rendering helpers
+   ============================================================ */
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>s;
+
+function acc(title, sub, bodyHTML, badge='', img=''){
+  bodyHTML += pic(img);
+  return `<div class="acc card overflow-hidden">
+    <div class="acc-head flex items-start gap-4 p-5" onclick="this.parentElement.classList.toggle('open')">
+      ${badge?`<div class="flex-none w-11 h-11 rounded-xl grid place-items-center text-lg" style="background:color-mix(in srgb,var(--primary) 12%,transparent)">${badge}</div>`:''}
+      <div class="flex-1 min-w-0">
+        <div class="font-bold text-[15px] pri leading-snug">${title}</div>
+        ${sub?`<div class="text-[12.5px] muted mt-1 leading-relaxed">${sub}</div>`:''}
+      </div>
+      <div class="caret muted text-sm mt-1 flex-none">▾</div>
+    </div>
+    <div class="acc-body"><div class="px-5 pb-5 pt-0 space-y-3 text-[13.5px] leading-[2.1]" style="border-top:1px dashed var(--line);padding-top:1rem">${bodyHTML}</div></div>
+  </div>`;
+}
+const P=a=>a.map(x=>`<p>${x}</p>`).join('');
+
+/* ---- sections ---- */
+const SEC=[];
+
+SEC.push({id:'intro',t:'សេចក្តីផ្តើម និងបរិបទគោលនយោបាយ',html:`
+<div class="card p-8 md:p-12 text-center relative overflow-hidden">
+  <div class="absolute inset-x-0 top-0 h-1" style="background:linear-gradient(90deg,var(--primary),var(--accent),var(--primary))"></div>
+  <div class="moul text-[15px] pri leading-[2.1]">ព្រះរាជាណាចក្រកម្ពុជា</div>
+  <div class="moul text-[15px] pri leading-[2.1]">ជាតិ សាសនា ព្រះមហាក្សត្រ</div>
+  <div class="w-14 h-[3px] mx-auto mt-6 mb-6" style="background:var(--accent)"></div>
+  <h1 class="moul text-xl md:text-3xl leading-[1.9]">របាយការណ៍ស្រាវជ្រាវសុីជម្រៅស្តីពី<br>
+    <span class="pri">ការកសាងប្រព័ន្ធសុខភាពសិក្សាគ្រប់ជ្រុងជ្រោយ</span><br>
+    និងការលើកកម្ពស់ចលនាកីឡាសាលារៀននៅកម្ពុជា</h1>
+  <div class="flex flex-wrap justify-center gap-2 mt-8">
+    <span class="chip">គោលនយោបាយជាតិ ២០២១–២០៣០</span><span class="chip">សំណុំសកម្មភាព ៩ ចំណុច</span>
+    <span class="chip">Three Star Approach</span><span class="chip">SBCC</span><span class="chip">SDG 3 &amp; 4</span>
+  </div>
+</div>
+
+<div class="grid md:grid-cols-3 gap-4 mt-6">
+  <div class="kpi card p-6"><div class="text-3xl font-bold">២០៣០</div><div class="text-[11px] opacity-90 mt-2 leading-relaxed">ចំណូលមធ្យមកម្រិតខ្ពស់</div></div>
+  <div class="kpi card p-6"><div class="text-3xl font-bold">២០៥០</div><div class="text-[11px] opacity-90 mt-2 leading-relaxed">ប្រទេសអភិវឌ្ឍន៍ពេញលេញ</div></div>
+  <div class="kpi card p-6"><div class="text-3xl font-bold">៩</div><div class="text-[11px] opacity-90 mt-2 leading-relaxed">សំណុំសកម្មភាពស្នូល</div></div>
+</div>
+
+<div class="mt-6 space-y-4">
+${acc('ហេតុអ្វីសុខភាពសិក្សាជាបញ្ហាសេដ្ឋកិច្ច?','ការអភិវឌ្ឍធនធានមនុស្សប្រកបដោយគុណភាព គឺជាមូលដ្ឋានគ្រឹះដ៏សំខាន់បំផុតក្នុងការទ្រទ្រង់កំណើនសេដ្ឋកិច្ច និងការអភិវឌ្ឍសង្គមជាតិប្រកបដោយចីរភាព។',
+P(['នៅក្នុងបរិបទនៃទិដ្ឋភាពអប់រំនៅព្រះរាជាណាចក្រកម្ពុជា ការធ្វើបដិវត្តកម្មវិស័យអប់រំបានឈានដល់របត់ថ្មីមួយ ដែលលែងពឹងផ្អែកត្រឹមតែលើការផ្ទេរចំណេះដឹងផ្នែកវិទ្យាសាស្ត្រ និងទ្រឹស្តីនៅក្នុងថ្នាក់រៀនទៀតហើយ ប៉ុន្តែត្រូវពង្រីកវិសាលភាពទៅជាការកសាងប្រព័ន្ធអេកូឡូស៊ីសុខភាព និងកាយសម្បទាពេញលេញ។',
+   'របាយការណ៍នេះធ្វើការវិភាគយ៉ាងសុីជម្រៅទៅលើផែនការសកម្មភាពយុទ្ធសាស្ត្រ «ការកសាងប្រព័ន្ធសុខភាពសិក្សាគ្រប់ជ្រុងជ្រោយ និងការលើកកម្ពស់ចលនាកីឡាសាលារៀន» ក្នុងការប្រែក្លាយសាលារៀនឱ្យទៅជាមជ្ឈមណ្ឌលគាំទ្រការលូតលាស់ ទាំងផ្នែកបញ្ញាសម្បទា កាយសម្បទា ចរិយាសម្បទា និងសុខុមាលភាពផ្លូវចិត្ត។',
+   'ការវិភាគសុីជម្រៅបង្ហាញឱ្យឃើញនូវទំនាក់ទំនងហេតុនិងផលយ៉ាងជិតស្និទ្ធរវាងសុខភាពផ្លូវកាយ និងសមត្ថភាពនៃការស្រូបយកចំណេះដឹង ដោយសារសិស្សានុសិស្សមិនអាចផ្តោតអារម្មណ៍រៀនសូត្របានល្អឡើយ ប្រសិនបើពួកគេជួបប្រទះបញ្ហាកង្វះអាហារូបត្ថម្ភ ជំងឺឆ្លង ឬវិបត្តិផ្លូវចិត្ត។']),'📌','school')}
+${acc('គោលនយោបាយជាតិស្តីពីសុខភាពសិក្សា ២០២១–២០៣០','ដាក់ចេញដោយរាជរដ្ឋាភិបាលកម្ពុជា តាមរយៈក្រសួងអប់រំ យុវជន និងកីឡា។',
+P(['គោលនយោបាយនេះមានចក្ខុវិស័យយ៉ាងច្បាស់លាស់ក្នុងការអភិវឌ្ឍធនធានមនុស្សឱ្យមានលក្ខណៈសម្បត្តិពេញលេញ និងមានសុខភាពល្អទាំងកាយសម្បទា បញ្ញា និងស្មារតី។',
+   'គោលដៅចុងក្រោយ៖ ដើម្បីឈានទៅសម្រេចគោលដៅអភិវឌ្ឍន៍ជាតិ ក្លាយជាប្រទេសមានចំណូលមធ្យមកម្រិតខ្ពស់នៅឆ្នាំ ២០៣០ និងប្រទេសអភិវឌ្ឍន៍ពេញលេញនៅឆ្នាំ ២០៥០។']),'🇰🇭','policy')}
+</div>
+
+<div class="card p-6 mt-6">
+  <div class="text-[13px] font-bold pri mb-1">តុល្យភាពយុទ្ធសាស្ត្រ ២០២១–២០៣០</div>
+  <div class="text-[11px] muted mb-2">ទិដ្ឋភាពពហុវិមាត្រនៃគោលដៅសុខភាពសិក្សា</div>
+  <div class="chartbox"><canvas id="cRadar"></canvas></div>
+</div>`});
+
+const TQUAL=[
+ {icon:'💪',t:'កាយសម្បទា',s:'រឹងមាំ រហ័សរហួន ជាគំរូកាយសម្បទាដល់សិស្ស។',
+  d:['សិស្សយកតម្រាប់តាមអ្វីដែលពួកគេ<b>ឃើញ</b> មិនមែនអ្វីដែលពួកគេ<b>ឮ</b>នោះទេ។ គ្រូដែលចូលរួមហាត់ប្រាណ ឬលេងកីឡាជាមួយសិស្សផ្ទាល់ បង្កើតបាននូវភាពជឿជាក់ដែលពាក្យសម្ដីមិនអាចបង្កើតបាន។',
+      'ការថែរក្សាកាយសម្បទារបស់គ្រូ មិនមែនជារឿងផ្ទាល់ខ្លួនទេ ប៉ុន្តែជាឧបករណ៍គរុកោសល្យមួយ ព្រោះរាងកាយរបស់គ្រូគឺជាសម្ភារបង្រៀនដំបូងបំផុតដែលសិស្សមើលឃើញរាល់ថ្ងៃ។']},
+ {icon:'🎓',t:'គរុកោសល្យ',s:'វិធីសាស្ត្របង្រៀនបែបទំនើប និងស្វ័យអភិវឌ្ឍន៍ជាបន្តបន្ទាប់ (CPD)។',
+  d:['គ្រូគ្រប់មុខវិជ្ជា មិនមែនតែគ្រូអប់រំកាយទេ ត្រូវចេះបញ្ចូលសារសុខភាពទៅក្នុងមេរៀនរបស់ខ្លួន — គណិតវិទ្យាអាចគណនាជាតិស្ករក្នុងភេសជ្ជៈ ភាសាខ្មែរអាចសរសេរអត្ថបទពីអនាម័យ។',
+      'ការបណ្តុះបណ្តាលបន្ត (CPD) ពីវិទ្យាស្ថានជាតិអប់រំកាយ និងកីឡា (NIPES) គឺជាយន្តការធានាថាចំណេះដឹងរបស់គ្រូមិនហួសសម័យ។']},
+ {icon:'⚖️',t:'សីលធម៌',s:'មនសិការវិជ្ជាជីវៈ និងការអនុវត្តបទបញ្ជាដោយខ្លួនឯងជាមុន។',
+  d:['បទបញ្ជាហាមឃាត់ភេសជ្ជៈប៉ូវកម្លាំង បារី និងថ្នាំជក់អេឡិចត្រូនិក ត្រូវចាប់ផ្តើមពីគ្រូជាមុនសិន។ គ្រូដែលអនុវត្តខុសពីអ្វីដែលខ្លួនបង្រៀន បំផ្លាញអានុភាពនៃវិធានទាំងមូល។',
+      'សីលធម៌ក៏រួមបញ្ចូលការរក្សាការសម្ងាត់ផងដែរ — ព័ត៌មានសុខភាព ឬបញ្ហាផ្លូវចិត្តរបស់សិស្ស មិនត្រូវយកមកនិយាយជាសាធារណៈឡើយ។']},
+ {icon:'🤝',t:'បរិយាបន្ន',s:'ឆ្លើយតបនឹងវប្បធម៌ និងភាពខុសគ្នារបស់សិស្ស (Culturally Responsive)។',
+  d:['គ្រូត្រូវយកចិត្តទុកដាក់ជាពិសេសចំពោះសិស្សពិការ សិស្សក្រីក្រដែលមិនមានលទ្ធភាពទិញអាហារ និងសិស្សស្រីក្នុងរដូវអនាម័យ។',
+      'បរិយាបន្នមានន័យថាការរៀបចំសកម្មភាពកីឡាឱ្យសិស្សគ្រប់រូបចូលរួមបាន មិនមែនត្រឹមតែសិស្សពូកែនោះទេ។']}
+];
+const TDAILY=[
+ ['លាងដៃជាមួយសិស្ស','គ្រូលាងដៃក្នុងពេលដូចគ្នានឹងសិស្ស មិនមែនឈរត្រួតពិនិត្យតែប៉ុណ្ណោះទេ។'],
+ ['ចូលរួមហាត់ប្រាណ','យ៉ាងតិច ១ដង/សប្តាហ៍ គ្រូចុះលេងកីឡា ឬហាត់ប្រាណជាមួយសិស្សផ្ទាល់។'],
+ ['ហូបអាហារជាមួយសិស្ស','ជ្រើសរើសម្ហូបមានជីវជាតិនៅអាហារដ្ឋានសាលា ជាការបង្ហាញជម្រើសដោយស្ងាត់ៗ។'],
+ ['មិនប្រើផលិតផលហាមឃាត់','គ្មានភេសជ្ជៈប៉ូវកម្លាំង បារី ឬថ្នាំជក់អេឡិចត្រូនិកក្នុងបរិវេណសាលា។'],
+ ['សង្កេតអារម្មណ៍សិស្ស','កត់សម្គាល់ការប្រែប្រួលមិនប្រក្រតី រួចបញ្ជូនទៅបន្ទប់សុខភាពដោយថ្នមៗ។'],
+ ['បញ្ចូលសារសុខភាព','យ៉ាងតិច ១ សារក្នុងមេរៀនប្រចាំសប្តាហ៍ ទោះបីជាមុខវិជ្ជាអ្វីក៏ដោយ។']
+];
+const TCYCLE=[['១','គំរូ','Model','គ្រូអនុវត្តជាមុនឱ្យសិស្សឃើញ'],
+ ['២','អនុវត្តរួម','Practice','សិស្សធ្វើតាមជាក្រុមរៀងរាល់ថ្ងៃ'],
+ ['៣','លើកទឹកចិត្ត','Reinforce','សរសើរ និងទទួលស្គាល់ជាសាធារណៈ'],
+ ['៤','ទម្លាប់','Habit','សិស្សធ្វើដោយស្វ័យប្រវត្តិ និងនាំទៅផ្ទះ']];
+const TKPI=[['% គ្រូចូលរួមសកម្មភាពកីឡាសាលា','វាស់ភាពជាគំរូជាក់ស្តែង មិនមែនត្រឹមការណែនាំ'],
+ ['% គ្រូបានឆ្លងកាត់ CPD អប់រំសុខភាព','វាស់សមត្ថភាពបច្ចេកទេសរបស់ក្រុមគ្រូ'],
+ ['ចំនួនករណីបញ្ជូនទៅបន្ទប់សុខភាព','វាស់ការប្រុងប្រយ័ត្ន និងការយកចិត្តទុកដាក់របស់គ្រូ'],
+ ['ការវាយតម្លៃដោយសិស្ស','សិស្សវាយតម្លៃថាតើគ្រូជាគំរូខាងសុខភាពដែរឬទេ']];
+
+SEC.push({id:'teach',t:'វប្បធម៌គ្រូបង្រៀនក្នុងការបណ្តុះការអប់រំកាយ និងសុខភាព',html:`
+<p class="muted text-[13px] mb-5 leading-[2.1]">វប្បធម៌បណ្តុះការអប់រំកាយ និងសុខភាព មិនកើតឡើងដោយបទបញ្ជា ឬថវិកានោះទេ ប៉ុន្តែកើតឡើងពី<b>ឥរិយាបថប្រចាំថ្ងៃរបស់គ្រូបង្រៀន</b>។ គុណភាពនៃប្រព័ន្ធអប់រំមិនអាចលើសពីគុណភាពនៃគ្រូបង្រៀនឡើយ — ដូច្នេះគ្រូគឺជាចំណុចចាប់ផ្តើម និងជាកត្តាសម្រេចនៃវប្បធម៌នេះ។</p>
+
+<div class="card p-7 mb-6 text-center" style="border-left:5px solid var(--accent)">
+  <div class="moul text-[15px] pri leading-[2.2]">គ្រូបង្រៀនជា «វិស្វករនៃព្រលឹង<br>និងសុខុមាលភាពសិស្ស»</div>
+  <div class="text-[12.5px] muted mt-3 leading-[2.1] max-w-3xl mx-auto">គ្រូមិនត្រឹមតែជាអ្នកផ្ទេរចំណេះដឹងទេ ប៉ុន្តែជាអ្នកកសាងគ្រឹះជីវិត។ គ្រូដែលពោរពេញដោយថាមពល និងការយកចិត្តទុកដាក់ គឺជា<b>គំរូរស់រវើក (Role Model)</b> ដែលជម្រុញឱ្យសិស្សយកតម្រាប់តាម ទាំងក្នុងការសិក្សា និងការរស់នៅប្រចាំថ្ងៃ។</div>
+</div>
+
+<div class="text-[12px] font-bold pri mb-3 uppercase tracking-widest">លក្ខណៈសម្បត្តិស្នូល ៤ របស់គ្រូសម័យថ្មី</div>
+<div class="grid sm:grid-cols-2 gap-4 mb-7">
+${TQUAL.map((q,i)=>`<div class="acc card overflow-hidden">
+  <div class="acc-head p-5" onclick="this.parentElement.classList.toggle('open')">
+    <div class="flex items-start justify-between"><div class="text-2xl">${q.icon}</div><div class="caret muted text-xs">▾</div></div>
+    <div class="font-bold text-[13.5px] mt-3 pri">${i+1}. ${q.t}</div>
+    <div class="text-[12px] muted mt-2 leading-relaxed">${q.s}</div>
+  </div>
+  <div class="acc-body"><div class="px-5 pb-5 space-y-3 text-[12.5px] leading-[2.1]" style="border-top:1px dashed var(--line);padding-top:.9rem">
+    ${P(q.d)}${pic({lab:'គ្រូបង្រៀន — '+q.t})}</div></div>
+</div>`).join('')}
+</div>
+
+<div class="text-[12px] font-bold pri mb-3 uppercase tracking-widest">វដ្តបង្កើតវប្បធម៌ ៤ ជំហាន</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-7">
+${TCYCLE.map(c=>`<div class="card p-5 text-center">
+  <div class="w-11 h-11 mx-auto rounded-full grid place-items-center font-bold text-[15px] text-white bg-pri">${c[0]}</div>
+  <div class="font-bold text-[13.5px] pri mt-3">${c[1]}</div>
+  <div class="text-[9px] uppercase tracking-widest muted mt-1">${c[2]}</div>
+  <div class="text-[11.5px] muted mt-2 leading-relaxed">${c[3]}</div>
+</div>`).join('')}
+</div>
+
+<div class="grid lg:grid-cols-2 gap-5">
+ <div>
+  <div class="text-[12px] font-bold pri mb-3 uppercase tracking-widest">ឥរិយាបថគ្រូប្រចាំថ្ងៃ ៦ យ៉ាង</div>
+  <div class="space-y-3">${TDAILY.map(d=>acc(d[0],'',`<p>${d[1]}</p>`,'✓')).join('')}</div>
+ </div>
+ <div>
+  <div class="text-[12px] font-bold pri mb-3 uppercase tracking-widest">របៀបវាស់វែងកម្រិតគ្រូ</div>
+  <div class="space-y-3">${TKPI.map(k=>acc(k[0],'',`<p>${k[1]}</p>`,'📊')).join('')}</div>
+  <div class="card p-5 mt-4 text-[12px] leading-[2.1]" style="border-left:5px solid var(--accent)">
+   វប្បធម៌មិនអាចវាស់បានដោយផ្ទាល់ទេ ប៉ុន្តែយើងវាស់បាននូវ<b>ឥរិយាបថដែលបង្កើតវប្បធម៌</b>។ ពេលសូចនាករទាំង ៤ នេះកើនឡើងជាប់លាប់ វប្បធម៌បានចាក់ឫសរួចហើយ។
+  </div>
+ </div>
+</div>`});
+
+SEC.push({id:'obj',t:'កម្មវត្ថុជាក់ស្តែងទាំង ៥',html:`
+<p class="muted text-[13px] mb-5 leading-[2.1]">ការអនុវត្តប្រកបដោយជោគជ័យនូវប្រព័ន្ធអេកូឡូស៊ីសុខភាពសាលារៀន ទាមទារឱ្យមានការកំណត់កម្មវត្ថុជាក់ស្តែងដែលតភ្ជាប់គោលនយោបាយថ្នាក់ជាតិ ទៅនឹងសកម្មភាពផ្ទាល់នៅតាមមូលដ្ឋាន។ កម្មវត្ថុជាក់ស្តែងទាំង ៥ ត្រូវបានរៀបចំឡើងយ៉ាងប្រទាក់ក្រឡាគ្នា ដើម្បីដោះស្រាយបញ្ហាប្រឈមជាប្រព័ន្ធ។</p>
+<div class="space-y-4">${OBJECTIVES.map(o=>acc(
+  `<span class="text-[11px] muted font-normal">${o.n}</span> · ${o.t} <span class="text-[10px] font-normal ml-2 px-2 py-[2px] rounded-full" style="background:color-mix(in srgb,var(--accent) 25%,transparent)">${o.tag}</span>`,
+  o.sum, P(o.body), o.icon, ['policy','sport','nutrition','mental','teacher'][OBJECTIVES.indexOf(o)])).join('')}</div>`});
+
+SEC.push({id:'pillars',t:'សំណុំសកម្មភាព ៩ ចំណុច',html:`
+<p class="muted text-[13px] mb-5 leading-[2.1]">អភិក្រម «សុខភាពសិក្សាគ្រប់ជ្រុងជ្រោយ» ប្រើប្រាស់យន្តការ ៩ យ៉ាងដែលប្រទាក់ក្រឡាគ្នា។ ចុចលើប្រអប់នីមួយៗ ដើម្បីពន្លាតការវិភាគលម្អិត។</p>
+<div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4">
+${PILLARS.map(p=>`<div class="acc card overflow-hidden">
+  <div class="acc-head p-5" onclick="this.parentElement.classList.toggle('open')">
+    <div class="flex items-start justify-between"><div class="text-2xl">${p.icon}</div><div class="caret muted text-xs">▾</div></div>
+    <div class="font-bold text-[13.5px] mt-3 pri">${p.i}. ${p.t}</div>
+    <div class="text-[12px] muted mt-2 leading-relaxed">${p.d}</div>
+  </div>
+  <div class="acc-body"><div class="px-5 pb-5 text-[12.5px] leading-[2.1]" style="border-top:1px dashed var(--line);padding-top:.9rem">
+    <div class="text-[10px] uppercase tracking-widest muted font-bold mb-2">ការវិភាគបន្ថែម</div>${p.x}
+    ${pic(['policy','clinic','nutrition','water','env','security','edu','hygiene','community'][p.i-1])}</div></div>
+</div>`).join('')}
+</div>`});
+
+SEC.push({id:'phases',t:'ដំណើរការសកម្មភាព ៣ ដំណាក់កាល',html:`
+<p class="muted text-[13px] mb-5 leading-[2.1]">ដំណើរការនៃការប្រែក្លាយសាលារៀនទៅជាប្រព័ន្ធអេកូឡូស៊ីសុខភាព ត្រូវបានអនុវត្តតាមរយៈវិធីសាស្ត្រផ្លាស់ប្តូរជាប្រព័ន្ធ (Systemic Change Approach) ដែលបែងចែកជា ៣ ដំណាក់កាលធំៗ។ ការបែងចែកពេលវេលានេះឆ្លុះបញ្ចាំងពីទ្រឹស្តីនៃការផ្លាស់ប្តូរ (Theory of Change) ដែលចាប់ផ្តើមពីការរៀបចំរចនាសម្ព័ន្ធអភិបាលកិច្ច ឆ្លងទៅការកែប្រែឥរិយាបថ និងបញ្ចប់ដោយការវាយតម្លៃផលធៀប។</p>
+<div class="space-y-5">
+${PHASES.map(ph=>`<div class="card overflow-hidden">
+  <div class="p-5 flex flex-wrap items-center gap-3" style="border-bottom:1px solid var(--line);border-left:5px solid ${ph.color}">
+    <span class="text-[11px] font-bold px-3 py-1 rounded-full text-white" style="background:${ph.color}">${ph.p}</span>
+    <span class="text-[11px] muted">⏱ ${ph.time}</span>
+    <span class="font-bold text-[14px] pri w-full sm:w-auto">${ph.title}</span>
+  </div>
+  <div class="p-4 space-y-3">
+    ${ph.items.map(([t,d],j)=>acc(t,'',`<p>${d}</p>`,'▸',
+        [['school','policy','garden','clinic'],
+         ['edu','hygiene','checkup','nutrition','sport','mental'],
+         ['community','economy']][PHASES.indexOf(ph)][j])).join('')}
+  </div>
+</div>`).join('')}
+</div>`});
+
+SEC.push({id:'gov',t:'ក្របខណ្ឌអភិបាលកិច្ច និងភាគីពាក់ព័ន្ធ',html:`
+<p class="muted text-[13px] mb-4 leading-[2.1]">និរន្តរភាពនៃប្រព័ន្ធអេកូឡូស៊ីសុខភាពសាលារៀន ពឹងផ្អែកទាំងស្រុងលើខ្សែសង្វាក់តម្លៃនៃកិច្ចសហការ និងអភិបាលកិច្ចច្បាស់លាស់ ដែលភាគីនីមួយៗមានតួនាទីបំពេញឱ្យគ្នាទៅវិញទៅមក។</p>
+<div class="flex flex-wrap gap-2 mb-4 noprint">
+  <button class="chip on" data-f="all">ទាំងអស់</button>
+  <button class="chip" data-f="resp">អ្នកទទួលខុសត្រូវ</button>
+  <button class="chip" data-f="part">អ្នកចូលរួម</button>
+  <button class="chip" data-f="stake">អ្នកពាក់ព័ន្ធ</button>
+</div>
+<div class="card overflow-x-auto p-1">
+<table id="tblStake"><thead><tr><th style="width:22%">ក្រុមគោលដៅ</th><th style="width:24%">សមាសភាពជាក់ស្តែង</th><th>តួនាទី និងកាតព្វកិច្ចយុទ្ធសាស្ត្រក្នុងការអនុវត្ត</th></tr></thead>
+<tbody>${STAKEHOLDERS.map(s=>`<tr data-k="${s.k}"><td class="font-bold pri text-[11.5px]">${s.g}</td><td class="font-semibold">${s.who}</td><td>${s.role}</td></tr>`).join('')}</tbody></table>
+</div>
+<div class="card p-5 mt-4 text-[12.5px] leading-[2.1]" style="border-left:5px solid var(--accent)">
+តាមរយៈការកំណត់តួនាទីយ៉ាងច្បាស់លាស់នេះ យើងឃើញថាមានអន្តរកម្មរវាងអំណាចរដ្ឋ (ក្រសួង និងអាជ្ញាធរ) និងការចូលរួមរបស់សហគមន៍ (មាតាបិតា អាជីវករ អង្គការ) គឺជាគន្លឹះឆ្ពោះទៅរកការកសាងស្វ័យភាពសាលារៀន (School Autonomy) ប្រកបដោយគណនេយ្យភាព។
+</div>`});
+
+SEC.push({id:'star',t:'អភិក្រមផ្កាយបី (Three Star Approach)',html:`
+<p class="muted text-[13px] mb-5 leading-[2.1]">ប្រព័ន្ធផ្គត់ផ្គង់ទឹកស្អាត និងអនាម័យ (WASH) គឺជាគ្រឹះខ្លះដែលទ្រទ្រង់ប្រតិបត្តិការសុខភាពសាលារៀនទាំងមូល។ ដោយផ្អែកលើការអនុវត្តអន្តរជាតិ និងកិច្ចសហការរវាងអង្គការ UNICEF ជាមួយនឹង GIZ ក្រសួងអប់រំ យុវជន និងកីឡានៃប្រទេសកម្ពុជា បានប្រកាន់យកនូវ «អភិក្រមផ្កាយបី» ជាក្របខណ្ឌជាតិ ដោយមិនទាមទារការវិនិយោគហិរញ្ញវត្ថុខ្នាតធំភ្លាមៗនោះទេ។</p>
+<div class="grid md:grid-cols-3 gap-4">
+${STARS.map(s=>`<div class="acc card overflow-hidden">
+ <div class="acc-head p-5" onclick="this.parentElement.classList.toggle('open')">
+   <div class="flex items-center justify-between"><div class="star text-lg tracking-widest">${'★'.repeat(s.n)}<span style="opacity:.2">${'★'.repeat(3-s.n)}</span></div><div class="caret muted text-xs">▾</div></div>
+   <div class="font-bold text-[13.5px] mt-3 pri">${s.t}</div>
+   <div class="text-[12px] muted mt-2 leading-relaxed">${s.s}</div>
+ </div>
+ <div class="acc-body"><div class="px-5 pb-5 space-y-3 text-[12.5px] leading-[2.1]" style="border-top:1px dashed var(--line);padding-top:.9rem">${P(s.d)}
+   ${pic({lab:s.t})}</div></div>
+</div>`).join('')}
+</div>
+<div class="grid lg:grid-cols-2 gap-4 mt-5">
+  <div class="card p-6"><div class="text-[13px] font-bold pri mb-1">ស្ថានភាព WASH ក្នុងសាលារៀនកម្ពុជា — ទិន្នន័យពិត</div>
+    <div class="text-[11px] muted mb-2">ភាគរយនៃសាលារៀនដែលមានសេវាកម្មកម្រិតមូលដ្ឋាន (EMIS ២០២២–២០២៣ / JMP ២០២២)</div>
+    <div class="chartbox"><canvas id="cWash"></canvas></div>
+    <div class="text-[10px] muted mt-3 leading-relaxed">ប្រភព៖ UNICEF Cambodia — <em>Climate rationale for WASH services in Cambodia</em> (២០២៤) ដកស្រង់ពី EMIS ២០២២–២០២៣ និងរបាយការណ៍ WHO/UNICEF JMP ២០២២។ អនាម័យបង្គន់ជាសូចនាករកម្រិតទាបបំផុត ដោយសារបង្គន់ដាច់ដោយឡែកតាមភេទដែលបានធ្វើឱ្យប្រសើរ មានតែក្នុង ៣៩% នៃសាលារៀន។</div></div>
+  <div class="card p-6"><div class="text-[13px] font-bold pri mb-1">និន្នាការអនាម័យក្នុងសាលារៀន ២០១៥ → ២០២១</div>
+    <div class="text-[11px] muted mb-2">កម្ពុជាបានបង្កើនយ៉ាងលឿននូវសមាមាត្រសាលារៀនដែលមានសេវាអនាម័យកម្រិតមូលដ្ឋាន</div>
+    <div class="chartbox"><canvas id="cTrend"></canvas></div>
+    <div class="text-[10px] muted mt-3 leading-relaxed">ប្រភព៖ WHO/UNICEF JMP (២០២២) តាមរយៈ UNICEF Cambodia។ ការកើនឡើងពី ៣០% ទៅ ៦៨% បង្ហាញថាកម្ពុជាស្ថិតលើផ្លូវត្រូវ ដើម្បីសម្រេចគោលដៅ SDG។ គម្លាតរវាងទីក្រុង និងជនបទតិចជាង ១០ ភាគរយ។ បឋមសិក្សា ៧៣% · មធ្យមសិក្សា ៦៧% · មត្តេយ្យ ៦១%។</div></div>
+</div>`});
+
+SEC.push({id:'me',t:'ការវាស់វែង លទ្ធផល និងការវាយតម្លៃ',html:`
+<p class="muted text-[13px] mb-5 leading-[2.1]">រាល់ផែនការសកម្មភាពដ៏ល្អឥតខ្ចោះ នឹងមិនមានប្រសិទ្ធភាពឡើយ បើសិនបើគ្មានប្រព័ន្ធត្រួតពិនិត្យ និងវាយតម្លៃ (M&amp;E Framework) ដែលតឹងរឹង។ ការវាយតម្លៃត្រូវធ្វើឡើងតាមរយៈការប្រៀបធៀបទិន្នន័យមូលដ្ឋាន និងទិន្នន័យក្រោយការអនុវត្ត (Baseline vs. Endline)។</p>
+
+<div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-4 mb-6">
+${KPIS.map(k=>`<div class="acc card overflow-hidden">
+  <div class="acc-head p-5" onclick="this.parentElement.classList.toggle('open')">
+   <div class="flex items-start justify-between"><div class="text-2xl font-bold pri">${k.v}</div><div class="caret muted text-xs">▾</div></div>
+   <div class="text-[12px] mt-2 leading-relaxed">${k.l}</div></div>
+  <div class="acc-body"><div class="px-5 pb-5 text-[12px] muted leading-[2]" style="border-top:1px dashed var(--line);padding-top:.8rem">${k.d}
+   ${pic(['sport','checkup','hygiene','nutrition','mental','data'][KPIS.indexOf(k)])}</div></div>
+</div>`).join('')}
+</div>
+
+<div class="card p-6 mb-6 text-center">
+  <div class="text-[11px] uppercase tracking-widest muted font-bold mb-4">ឧទាហរណ៍រូបមន្តវាយតម្លៃផ្អែកលើភស្តុតាង (Evidence-based scoring)</div>
+  <div class="inline-flex flex-wrap items-center justify-center gap-3 text-[13px]">
+    <span class="font-bold pri">ពិន្ទុអត្រាពិនិត្យសុខភាព</span><span class="text-xl">=</span>
+    <span class="inline-block text-center">
+      <span class="block px-4 pb-1" style="border-bottom:2px solid var(--ink)">ចំនួនសិស្សមានសៀវភៅសុខភាព និងបានកត់ត្រា</span>
+      <span class="block px-4 pt-1">ចំនួនសិស្សសរុប</span>
+    </span>
+    <span class="text-xl">× 100%</span>
+  </div>
+</div>
+
+<div class="grid lg:grid-cols-2 gap-5">
+ <div>
+  <div class="text-[12px] font-bold pri mb-3 uppercase tracking-widest">យន្តការតាមដាន ៣ ស្រទាប់</div>
+  <div class="space-y-3">${MONITOR.map((m,i)=>acc(`${m.n} — ${m.t}`,'',`<p>${m.d}</p>`,'🔍',['monitor','data','policy'][i])).join('')}</div>
+ </div>
+ <div>
+  <div class="text-[12px] font-bold pri mb-3 uppercase tracking-widest">សូចនាករគុណភាព (Qualitative)</div>
+  <div class="space-y-3">
+   ${acc('ទម្លាប់ស្វ័យប្រវត្តិ (Automation of Habits)','',
+     '<p>លទ្ធផលរំពឹងទុកគឺសិស្សកើតមានទម្លាប់ស្វ័យប្រវត្តិក្នុងការលាងដៃ ការហូបចុកអាហារមានជីវជាតិ និងការចៀសវាងអាហារផ្អែម ឬប៉ូវកម្លាំង។</p>','🔁','hygiene')}
+   ${acc('បរិយាកាសសិក្សា និងសុខភាពផ្លូវចិត្ត','',
+     '<p>ត្រូវមានភាពបែបតឹង សុវត្ថិភាព គ្មានការបំភិតបំភ័យ (Bullying) ឬអំពើហិង្សា ដែលធ្វើឱ្យសិស្សមានអារម្មណ៍កក់ក្តៅ។</p>','🕊️','mental')}
+   ${acc('វប្បធម៌គ្រូបង្រៀន (Culturally Responsive)','',
+     '<p>លើសពីនេះ វប្បធម៌គ្រូបង្រៀនត្រូវផ្លាស់ប្តូរ ដោយគ្រូបង្ហាញនូវភាពជាគំរូខាងសុខភាពកាយសម្បទាប្រកបដោយចាមពល និងប្រើប្រាស់វិធីសាស្ត្របង្រៀនប្រកបដោយបរិយាបន្ន។</p>','🎨','teacher')}
+   ${acc('ស្តង់ដាសាលារៀនគំរូ — ៥ ស្តង់ដា / ២៧ សូចនាករ','',
+     '<p>ដើម្បីធានាបាននូវភាពជឿជាក់ និងស្តង់ដារូបនីយកម្ម យន្តការតាមដានត្រូវបានធ្វើសមាហរណកម្មជាមួយ «ស្តង់ដាសាលារៀនគំរូ» ដែលដាក់ចេញដោយក្រសួងអប់រំ យុវជន និងកីឡា។ ស្តង់ដាសាលារៀនគំរូនេះមានស្តង់ដារូបចិត្ត ៥ និងសូចនាករលម្អិតចំនួន ២៧ ដែលក្នុងនោះការលើកកម្ពស់សុខភាពសិក្សា និងអាហារូបត្ថម្ភ ក៏ដូចជាកិច្ចការពារកុមារ ស្ថិតនៅក្នុងចំណុចស្នូលនៃការវាយតម្លៃ។</p>','🏅','data')}
+  </div>
+ </div>
+</div>
+
+<div class="card p-6 mt-5">
+  <div class="text-[13px] font-bold pri mb-1">សូចនាករបរិមាណគោលដៅ (Quantitative Targets)</div>
+  <div class="text-[11px] muted mb-2">គោលដៅដែលកំណត់ដោយផែនការសកម្មភាពខ្លួនឯង</div>
+  <div class="chartbox"><canvas id="cKpi"></canvas></div>
+  <div class="text-[10px] muted mt-3">ប្រភព៖ របាយការណ៍ស្រាវជ្រាវដើម (ផ្នែកការវាស់វែង លទ្ធផល និងការវាយតម្លៃ)។ តួលេខទាំងនេះជាគោលដៅ មិនមែនជាទិន្នន័យវាស់វែងបច្ចុប្បន្នទេ។</div>
+</div>`});
+
+SEC.push({id:'impact',t:'ផលជះសេដ្ឋកិច្ច–សង្គម',html:`
+<p class="muted text-[13px] mb-5 leading-[2.1]">ការវាយតម្លៃលើផែនការសកម្មភាពនេះ នឹងមានភាពចង្អៀតចង្អល់ ប្រសិនបើយើងសម្លឹងមើលត្រឹមតែលទ្ធផលក្នុងបរិវេណសាលា។ តាមទស្សនៈនៃការវិភាគសេដ្ឋកិច្ច–សង្គម នេះគឺជាយុទ្ធសាស្ត្រវិនិយោគលើមូលធនមនុស្សដែលមានអត្រាផលចំណេញខ្ពស់បំផុតក្នុងរយៈពេលវែង។</p>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+${[['>២/៣','នៃមរណភាពទាំងអស់នៅកម្ពុជា បណ្តាលមកពីជំងឺមិនឆ្លង (≈៦០,០០០ នាក់/ឆ្នាំ)'],
+   ['១ ក្នុង ៤','ជនជាតិខ្មែរស្លាប់មុនអាយុ ដោយសារ NCDs ចន្លោះអាយុ ៣០–៧០ ឆ្នាំ'],
+   ['៦.៦%','នៃ GDP (២០១៨) ជាការខាតបង់សេដ្ឋកិច្ចដោយសារ NCDs ≈ ៥.៩៧ ទ្រីលាន រៀល'],
+   ['៦.៣%','នៃមនុស្សពេញវ័យ មានជាតិស្ករក្នុងឈាមខ្ពស់ ឬត្រូវបានវិនិច្ឆ័យថាមានជំងឺទឹកនោមផ្អែម']
+  ].map(([v,l])=>`<div class="card p-5"><div class="text-2xl font-bold pri">${v}</div><div class="text-[11.5px] muted mt-2 leading-relaxed">${l}</div></div>`).join('')}
+</div>
+<div class="text-[10px] muted mb-6 leading-relaxed">ប្រភព៖ អង្គការសុខភាពពិភពលោក (WHO) — <em>Prevention and control of noncommunicable diseases in Cambodia</em> (UNIATF) និង WHO Western Pacific។ តួលេខទាំងនេះបញ្ជាក់ពីទំហំបញ្ហាដែលអន្តរាគមន៍កម្រិតសាលារៀនកំពុងព្យាយាមបង្ការទុកជាមុន។</div>
+<div class="space-y-4">${IMPACTS.map((i,n)=>acc(i.t,'',`<p>${i.d}</p>`,i.icon,['economy','ncd','hygiene','community','grad'][n])).join('')}</div>`});
+
+SEC.push({id:'concl',t:'សេចក្តីសន្និដ្ឋាន',html:`
+<div class="card p-8 md:p-10" style="border-top:5px solid var(--accent)">
+ <div class="space-y-4 text-[13.5px] leading-[2.2]">
+  <p>ផែនការសកម្មភាព «ការកសាងប្រព័ន្ធសុខភាពសិក្សាគ្រប់ជ្រុងជ្រោយ និងការលើកកម្ពស់ចលនាកីឡាសាលារៀន» មិនមែនត្រឹមតែជាក្របខណ្ឌប្រតិបត្តិការធម្មតានោះទេ ប៉ុន្តែគឺជាសរសរស្តម្ភដ៏មានអានុភាព ក្នុងការជំរុញគុណភាពវិស័យអប់រំនៅកម្ពុជាឱ្យស្របតាមបរិបទនៃតម្រូវការអភិវឌ្ឍន៍សកល។</p>
+  <p>ការប្រែក្លាយសាលារៀនពីមជ្ឈមណ្ឌលផ្ទេរចំណេះដឹងទ្រឹស្តីសុទ្ធសាធ ឱ្យទៅជាប្រព័ន្ធអេកូឡូស៊ីដែលគាំទ្រយ៉ាងពេញលេញដល់ការអភិវឌ្ឍបញ្ញាស្មារតី កាយសម្បទា និងសុខភាពផ្លូវចិត្ត គឺជាយុទ្ធសាស្ត្រផ្លូវរាងដ៏ឆ្លាតវៃក្នុងការដោះស្រាយបញ្ហាស្នូលនៃវិស័យអប់រំ និងសុខភាពសាធារណៈ។</p>
+  <p>តាមរយៈការអនុវត្តម៉ឺងម៉ាត់នូវ «សំណុំសកម្មភាព ៩ ចំណុច» ការវិភាគបន្ថែមសេចក្តីណែនាំលេខ ៧១ ស្តីពីចំណីអាហារនិងភេសជ្ជៈ ការប្រញាប់ប្រញាល់អភិក្រមផ្កាយបី (Three Star Approach) លើផ្នែកអនាម័យទឹកស្អាត និងការតម្រូវឱ្យមានម៉ោងកីឡាប្រចាំសប្តាហ៍ សាលារៀននឹងក្លាយជាទីជម្រកសុវត្ថិភាពដែលបណ្តុះទម្លាប់រស់នៅប្រចាំជីវិត។</p>
+  <p>ភាពជោគជ័យ និងនិរន្តរភាពនៃប្រព័ន្ធនេះ ផ្អែកទាំងស្រុងលើការប្រកាន់ខ្ជាប់នូវក្របខណ្ឌវាយតម្លៃតាម «ស្តង់ដាសាលារៀនគំរូ» ដែលពឹងផ្អែកលើទិន្នន័យជាក់ស្តែង និងការទទួលខុសត្រូវរួមគ្នារវាងគណៈគ្រប់គ្រងសាលា អាជ្ញាធរ អង្គការដៃគូ និងសហគមន៍មាតាបិតា។</p>
+  <p class="font-bold pri">ការវិនិយោគលើវប្បធម៌គ្រូបង្រៀនជា «វិស្វករនៃព្រលឹង» និងការផ្លាស់ប្តូរទម្លាប់សង្គម នឹងបន្សល់ទុកនូវកេរដំណែលនៃធនធានមនុស្សជំនាន់ថ្មីរបស់កម្ពុជា ដែលមិនត្រឹមតែមានចំណេះដឹងជ្រៅជ្រះប៉ុណ្ណោះទេ ប៉ុន្តែថែមទាំងមានសុខុមាលភាពរឹងមាំ ភាពធន់នឹងវិបត្តិ និងត្រៀមខ្លួនរួចជាស្រេចក្នុងការប្រកួតប្រជែងនៅក្នុងបរិបទសេដ្ឋកិច្ចសកល។</p>
+  <p class="text-center moul pri text-[15px] pt-4">ការអប់រំបែបនេះ គឺជាការអប់រំដែលបង្រៀនយុវជនឱ្យចេះរស់រានមានជីវិតប្រកបដោយគុណភាព (Learn to Live) យ៉ាងពិតប្រាកដ។</p>
+ </div>
+</div>`});
+
+SEC.push({id:'refs',t:'ឯកសារយោង (Works Cited)',html:`
+<div class="card p-6">
+<ol class="space-y-3 text-[12px] leading-relaxed" style="list-style:decimal;padding-left:1.4rem">
+${REFS.map(([t,u])=>`<li><span>${t}</span>${u?`<br><a href="${u}" target="_blank" rel="noopener" class="pri break-all text-[10.5px] underline">${u}</a>`:''}</li>`).join('')}
+</ol></div>`});
+
+/* ---- mount ---- */
+$('#main').innerHTML = SEC.map(s=>`<section id="${s.id}" class="scroll-mt-24">
+  <h2 class="moul text-lg md:text-xl pri mb-5 flex items-center gap-3">
+    <span class="inline-block w-8 h-[3px]" style="background:var(--accent)"></span>${s.t}</h2>${s.html}</section>`).join('');
+$('#tocList').innerHTML = SEC.map((s,i)=>`<a class="tocl" href="#${s.id}">${String(i+1).padStart(2,'0')} · ${s.t}</a>`).join('');
+
+/* ============================================================
+   ៣. Interactions
+   ============================================================ */
+function allAcc(open){ $$('.acc').forEach(a=>a.classList.toggle('open',open)); }
+
+/* ===== មេឌា និងការកែសម្រួល ===== */
+$('#picFile').addEventListener('change',e=>{
+  const f=e.target.files[0];
+  if(f && picTarget) addFile(picTarget,f);
+  picTarget=null; e.target.value='';
+});
+document.addEventListener('click',e=>{
+  const dz=e.target.closest && e.target.closest('.dz-empty');
+  if(dz && EDIT){ e.stopPropagation(); picTarget=dz.closest('.picbox'); $('#picFile').click(); }
+},true);
+['dragenter','dragover'].forEach(ev=>document.addEventListener(ev,e=>{
+  const b=e.target.closest && e.target.closest('.picbox');
+  if(b && EDIT){ e.preventDefault(); b.classList.add('drag'); }
+}));
+document.addEventListener('dragleave',e=>{
+  const b=e.target.closest && e.target.closest('.picbox');
+  if(b) b.classList.remove('drag');
+});
+document.addEventListener('drop',e=>{
+  const b=e.target.closest && e.target.closest('.picbox');
+  if(!b || !EDIT) return;
+  e.preventDefault(); b.classList.remove('drag');
+  addFile(b, e.dataTransfer && e.dataTransfer.files[0]);
+});
+
+/* ---- កែអត្ថបទ ---- */
+const INLINE={SPAN:1,EM:1,B:1,STRONG:1,I:1,A:1,BR:1,SMALL:1,CODE:1,MARK:1};
+function markTexts(){
+  let n=0;
+  $$('#main *').forEach(el=>{
+    if(el.dataset.eid) return;
+    if(el.closest('.picwrap,.chartbox,.caret,#lb')) return;
+    if(el.tagName==='BUTTON'||el.tagName==='CANVAS'||el.tagName==='SVG') return;
+    if(!el.textContent.trim()) return;
+    if(el.parentElement && el.parentElement.closest('[data-eid]')) return;
+    for(const c of el.children) if(!INLINE[c.tagName]) return;
+    el.dataset.eid='t'+(++n);
+  });
+  return n;
+}
+function applyTexts(){
+  Object.keys(TEXTS).forEach(id=>{
+    const el=document.querySelector('[data-eid="'+id+'"]');
+    if(el) el.innerHTML=TEXTS[id];
+  });
+}
+function setEdit(on){
+  EDIT=!!on;
+  document.body.classList.toggle('edit',EDIT);
+  $$('#main [data-eid]').forEach(el=>el.setAttribute('contenteditable',EDIT?'true':'false'));
+  const b=$('#btnEdit'); if(b){ b.classList.toggle('on',EDIT); b.textContent=EDIT?'✅ រួចរាល់':'✏️ កែសម្រួល'; }
+  refreshSlots();
+}
+document.addEventListener('input',e=>{
+  const el=e.target.closest && e.target.closest('[data-eid]');
+  if(el && EDIT){ TEXTS[el.dataset.eid]=el.innerHTML; queueSave(); }
+});
+document.addEventListener('click',e=>{
+  if(!EDIT) return;
+  const el=e.target.closest && e.target.closest('[data-eid]');
+  if(el) e.stopPropagation();
+},true);
+
+/* ---- ទាញយកឯកសារពេញ ---- */
+async function exportHtml(){
+  const btn=$('#btnExport'); const old=btn.textContent; btn.textContent='កំពុងរៀបចំ…';
+  try{
+    const src=await fetch(location.pathname,{cache:'no-store'}).then(r=>r.text());
+    const inject='<scr'+'ipt>window.__MEDIA='+JSON.stringify(MEDIA)+';window.__TEXTS='+JSON.stringify(TEXTS)
+      +';if(window.applySaved)window.applySaved();</scr'+'ipt>\n';
+    const out=src.replace('</body>',inject+'</body>');
+    const blob=new Blob([out],{type:'text/html;charset=utf-8'});
+    const mb=(blob.size/1048576).toFixed(1);
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob); a.download='index.html'; a.click();
+    setTimeout(()=>URL.revokeObjectURL(a.href),5000);
+    if(blob.size>20*1048576) alert('ឯកសារធំ '+mb+' MB — GitHub ទទួលបានតែ ២៥ MB តាមរយៈ Upload។ សូមប្រើ URL សម្រាប់វីដេអូវិញ។');
+  }catch(err){ alert('ទាញយកមិនបាន៖ '+err); }
+  btn.textContent=old;
+}
+$('#btnExport').onclick=exportHtml;
+$('#btnEdit').onclick=()=>setEdit(!EDIT);
+
+window.getMedia=function(sid){ return MEDIA[sid]; };
+window.applySaved=function(){
+  if(window.__MEDIA) MEDIA=Object.assign(MEDIA,window.__MEDIA);
+  if(window.__TEXTS) TEXTS=Object.assign(TEXTS,window.__TEXTS);
+  applyTexts();
+  $$('.picbox').forEach(renderSlot);
+  refreshSlots();
+};
+
+markTexts();
+(async function(){
+  const m=await DB.get('media'), t=await DB.get('texts');
+  if(m) MEDIA=Object.assign(m,MEDIA);
+  if(t) TEXTS=Object.assign(t,TEXTS);
+  window.applySaved();
+  setEdit(/[?&]edit=1/.test(location.search));
+})();
+
+/* ---- ទំហំអក្សរ · ពណ៌ · មាតិកា ---- */
+let K=1.3;
+function setK(v){
+  K=Math.min(2.4,Math.max(.9,Math.round(v*100)/100));
+  document.documentElement.style.setProperty('--k',K);
+  $('#sizeBadge').textContent=Math.round(K*100)+'%';
+  clearTimeout(setK._t); setK._t=setTimeout(drawAll,220);
+}
+function fs(d){ setK(K + d*0.1); }
+addEventListener('keydown',e=>{
+  if(e.target.tagName==='INPUT'||e.target.isContentEditable) return;
+  if(e.key==='+'||e.key==='=') fs(1);
+  if(e.key==='-'||e.key==='_') fs(-1);
+  if(e.key==='0') setK(1.3);
+  if(e.key.toLowerCase()==='p') $('#btnPresent').click();
+});
+$('#btnTheme').onclick=e=>{const h=document.documentElement;
+  const d=h.getAttribute('data-theme')==='dark'; h.setAttribute('data-theme',d?'light':'dark');
+  e.target.textContent=d?'🌙':'☀️'; setTimeout(drawAll,60);};
+$('#btnToc').onclick=()=>$('#toc').classList.toggle('hidden');
+
+/* stakeholder filter */
+$$('[data-f]').forEach(b=>b.onclick=()=>{
+  $$('[data-f]').forEach(x=>x.classList.remove('on')); b.classList.add('on');
+  const f=b.dataset.f;
+  $$('#tblStake tbody tr').forEach(tr=>tr.classList.toggle('hide', f!=='all' && tr.dataset.k!==f));
+});
+
+/* search */
+const q=$('#q'), qn=$('#qn');
+q.addEventListener('input',()=>{
+  const t=q.value.trim();
+  $$('mark').forEach(m=>m.replaceWith(document.createTextNode(m.textContent)));
+  $('#main').normalize();
+  if(t.length<2){qn.textContent='';return;}
+  let n=0;
+  const walk=document.createTreeWalker($('#main'),NodeFilter.SHOW_TEXT);
+  const hits=[]; let node;
+  while(node=walk.nextNode()){ if(node.nodeValue.includes(t)) hits.push(node); }
+  hits.forEach(nd=>{
+    const parts=nd.nodeValue.split(t); const frag=document.createDocumentFragment();
+    parts.forEach((p,i)=>{ frag.appendChild(document.createTextNode(p));
+      if(i<parts.length-1){const m=document.createElement('mark');m.textContent=t;frag.appendChild(m);n++;} });
+    nd.parentNode.replaceChild(frag,nd);
+  });
+  $$('mark').forEach(m=>{const a=m.closest('.acc'); if(a)a.classList.add('open');});
+  qn.textContent = n?`ជួប ${n} កន្លែង`:'រកមិនឃើញ';
+  const first=$('mark'); if(first) first.scrollIntoView({block:'center'});
+});
+
+/* scroll progress + active toc */
+const ids=SEC.map(s=>s.id);
+addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const pct=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
+  $('#prog').style.width=pct+'%'; $('#readStat').textContent='អានរួច '+Math.round(pct)+'%';
+  let cur=ids[0];
+  ids.forEach(id=>{ const el=document.getElementById(id); if(el && el.getBoundingClientRect().top<160) cur=id; });
+  $$('.tocl').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+},{passive:true});
+
+/* ============================================================
+   ៤. Charts
+   ============================================================ */
+let charts=[];
+function drawAll(){
+  charts.forEach(c=>c.destroy()); charts=[];
+  const ink=getComputedStyle(document.body).getPropertyValue('--ink').trim();
+  const line=getComputedStyle(document.body).getPropertyValue('--line').trim();
+  const pri=getComputedStyle(document.body).getPropertyValue('--primary').trim();
+  const S=n=>Math.round(n*K*10)/10;            // មាត្រដ្ឋានអក្សរក្រាហ្វិកតាម --k
+  const base={maintainAspectRatio:false,plugins:{legend:{display:false}},
+    font:{family:'Kantumruy Pro'}};
+  Chart.defaults.font.family='Kantumruy Pro';
+  Chart.defaults.font.size=S(12);
+  Chart.defaults.color=ink;
+  Chart.defaults.plugins.tooltip.titleFont={size:S(12)};
+  Chart.defaults.plugins.tooltip.bodyFont={size:S(12)};
+  Chart.defaults.elements.line.borderWidth=Math.max(3,S(3));
+  Chart.defaults.elements.point.radius=Math.max(4,S(4));
+
+  charts.push(new Chart($('#cRadar'),{type:'radar',data:{
+    labels:['គុណភាពអប់រំ','អប់រំពេញមួយជីវិត','បរិយាបន្ន','ផលិតភាពការងារ','សុខុមាលភាព'],
+    datasets:[{data:[95,90,85,90,92],backgroundColor:pri+'33',borderColor:pri,pointBackgroundColor:'#d4af37',borderWidth:2}]},
+    options:{...base,scales:{r:{min:40,grid:{color:line},angleLines:{color:line},
+      ticks:{display:false},pointLabels:{font:{size:S(11)}}}}}}));
+
+  charts.push(new Chart($('#cWash'),{type:'bar',data:{
+    labels:['ទឹកផឹកកម្រិតមូលដ្ឋាន','អនាម័យដៃ (Hygiene)','បង្គន់អនាម័យ (Sanitation)','បង្គន់ដាច់ដោយឡែកតាមភេទ','បង្គន់ដែលប្រើការបាន'],
+    datasets:[{data:[76,68,32,39,46],borderRadius:6,
+      backgroundColor:['#059669','#10b981','#ef4444','#f59e0b','#3b82f6']}]},
+    options:{...base,indexAxis:'y',
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.parsed.x+'% នៃសាលារៀន'}}},
+      scales:{x:{max:100,grid:{color:line},ticks:{font:{size:S(10)},callback:v=>v+'%'}},
+      y:{grid:{display:false},ticks:{font:{size:S(10)}}}}}}));
+
+  charts.push(new Chart($('#cTrend'),{type:'line',data:{
+    labels:['២០១៥','២០១៧','២០១៩','២០២១'],
+    datasets:[{label:'សាលារៀនមានសេវាអនាម័យកម្រិតមូលដ្ឋាន',data:[30,null,null,68],
+      borderColor:'#10b981',backgroundColor:'#10b98122',fill:true,tension:.3,spanGaps:true,
+      pointBackgroundColor:'#10b981',pointRadius:5,borderWidth:3}]},
+    options:{...base,plugins:{legend:{display:false},
+      tooltip:{callbacks:{label:c=>c.parsed.y+'% នៃសាលារៀន'}}},
+      scales:{y:{beginAtZero:true,max:100,grid:{color:line},ticks:{font:{size:S(10)},callback:v=>v+'%'}},
+      x:{grid:{display:false},ticks:{font:{size:S(10)}}}}}}));
+
+  charts.push(new Chart($('#cKpi'),{type:'bar',data:{
+    labels:['ចូលរួមក្លឹបកីឡា','ពិនិត្យសុខភាព ២ដង/ឆ្នាំ','កាត់បន្ថយអវត្តមានជំងឺ','លុបបំបាត់ភេសជ្ជៈហាមឃាត់'],
+    datasets:[{label:'គោលដៅតាមផែនការ',data:[100,100,25,100],
+      backgroundColor:[pri,pri,'#d4af37','#ef4444'],borderRadius:5}]},
+    options:{...base,
+      plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>'គោលដៅ '+c.parsed.y+'%'}}},
+      scales:{y:{beginAtZero:true,max:100,grid:{color:line},ticks:{font:{size:S(10)},callback:v=>v+'%'}},
+              x:{grid:{display:false},ticks:{font:{size:S(9.5)}}}}}}));
+}
+drawAll();
+</script>
+
+<div id="lb" class="noprint" role="dialog" aria-label="មើលពេញអេក្រង់">
+  <div id="lbbody"></div>
+  <div id="lbcap"></div>
+  <div id="lbn"></div>
+  <button class="lbbtn" id="lbprev" aria-label="មុន">&#8249;</button>
+  <button class="lbbtn" id="lbnext" aria-label="បន្ទាប់">&#8250;</button>
+  <button class="lbbtn" id="lbclose" aria-label="បិទ">&#10005;</button>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('lb'), bd=document.getElementById('lbbody'),
+      lc=document.getElementById('lbcap'), ln=document.getElementById('lbn');
+  var list=[], idx=0;
+  function collect(){ list=Array.prototype.slice.call(document.querySelectorAll('.picbox[data-has]')); }
+  function inner(m){
+    if(!m) return '';
+    if(m.t==='image') return '<img src="'+m.src+'" alt="">';
+    if(m.t==='video') return '<video src="'+m.src+'" controls autoplay playsinline></video>';
+    if(m.t==='yt')    return '<iframe src="https://www.youtube.com/embed/'+m.id+'?autoplay=1" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>';
+    if(m.t==='pdf')   return '<iframe src="'+m.src+'"></iframe>';
+    return '';
+  }
+  function show(i){
+    if(!list.length) collect();
+    if(!list.length) return;
+    idx=(i+list.length)%list.length;
+    var box=list[idx], m=window.getMedia(box.dataset.sid);
+    bd.innerHTML=inner(m);
+    lc.textContent=(m&&(m.lab||m.name))||'';
+    ln.textContent=(idx+1)+' / '+list.length;
+    lb.classList.add('on'); document.body.style.overflow='hidden';
+  }
+  function close(){ lb.classList.remove('on'); document.body.style.overflow=''; bd.innerHTML=''; }
+  document.addEventListener('click',function(e){
+    if(document.body.classList.contains('edit')) return;
+    var box=e.target.closest && e.target.closest('.picbox[data-has]');
+    if(box){ e.preventDefault(); e.stopPropagation(); collect(); show(list.indexOf(box)); }
+  },true);
+  document.getElementById('lbclose').onclick=function(e){e.stopPropagation();close();};
+  document.getElementById('lbprev').onclick=function(e){e.stopPropagation();show(idx-1);};
+  document.getElementById('lbnext').onclick=function(e){e.stopPropagation();show(idx+1);};
+  lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
+  window.addEventListener('keydown',function(e){
+    if(!lb.classList.contains('on')) return;
+    if(e.key==='Escape') close();
+    else if(e.key==='ArrowLeft'){ e.preventDefault(); show(idx-1); }
+    else if(e.key==='ArrowRight'){ e.preventDefault(); show(idx+1); }
+  });
+})();
+</script>
+<div id="showpick" class="noprint" role="dialog" aria-label="ជ្រើសស្លាយ">
+  <div id="pickcard">
+    <div class="pk-h">ជ្រើសផ្នែកសម្រាប់បទបង្ហាញ</div>
+    <div class="pk-sub">មិនចាំបាច់បង្ហាញទាំងអស់ទេ — ជ្រើសតែផ្នែកដែលពាក់ព័ន្ធនឹងប្រធានបទរបស់អ្នក</div>
+    <div class="pk-presets">
+      <button class="pk-btn" data-preset="short">ក្រុមទី១ · ខ្លី</button>
+      <button class="pk-btn" data-preset="full">ក្រុមទី១ · ពេញ</button>
+      <button class="pk-btn" data-preset="all">ទាំងអស់</button>
+      <button class="pk-btn" data-preset="none">សម្អាត</button>
+    </div>
+    <div id="pklist"></div>
+    <label class="pk-brief"><input type="checkbox" id="pkbrief" checked>
+      <span>របៀបខ្លី — បង្ហាញតែចំណងជើង និងសេចក្តីសង្ខេប (មិនដាក់អត្ថបទវែងលើស្លាយ)</span></label>
+    <div class="pk-foot">
+      <div id="pkcount" class="pk-count">០ ស្លាយ</div>
+      <button class="pk-go" id="pkgo">ចាប់ផ្តើមបទបង្ហាញ</button>
+      <button class="pk-cancel" id="pkcancel">បោះបង់</button>
+    </div>
+  </div>
+</div>
+
+<div id="show" class="noprint" role="dialog" aria-label="បទបង្ហាញ">
+  <div id="showbar"><i></i></div>
+  <div id="showslides"></div>
+  <div id="showfoot">
+    <button class="shbtn" id="shprev" aria-label="មុន">&#8249;</button>
+    <button class="shbtn" id="shplay" aria-label="ចាក់ស្វ័យប្រវត្តិ">&#9654;</button>
+    <span id="shnum">1 / 1</span>
+    <button class="shbtn" id="shnext" aria-label="បន្ទាប់">&#8250;</button>
+  </div>
+  <button class="shbtn" id="shclose" aria-label="បិទ">&#10005;</button>
+</div>
+<script>
+(function(){
+  var ov=document.getElementById('show'), holder=document.getElementById('showslides'),
+      bar=document.querySelector('#showbar i'), num=document.getElementById('shnum'),
+      play=document.getElementById('shplay'), pick=document.getElementById('showpick'),
+      pklist=document.getElementById('pklist'), pkcount=document.getElementById('pkcount'),
+      pkbrief=document.getElementById('pkbrief');
+  var slides=[], cur=0, timer=null, moved=[];
+  var PRESET={ short:['teach','concl'],
+               full:['intro','teach','pillars','star','me','concl'] };
+
+  function esc(t){ return String(t||'').replace(/[<>&]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;'}[c];}); }
+  function txt(el){ return el ? el.textContent.replace(/\s+/g,' ').trim() : ''; }
+  function secs(){ return [].slice.call(document.querySelectorAll('#main section')); }
+  function items(sec){
+    return [].slice.call(sec.querySelectorAll('.acc')).filter(function(a){
+      return !a.classList.contains('mslot') && !(a.parentElement && a.parentElement.closest('.acc'));
+    });
+  }
+  function countSec(sec){
+    var lead=sec.querySelector(':scope > p');
+    var charts=[].slice.call(sec.querySelectorAll('.card')).filter(function(c){return c.querySelector('.chartbox');}).length;
+    return 1 + ((lead&&txt(lead).length>40)?1:0) + items(sec).length + charts + (sec.querySelector('table')?1:0);
+  }
+  function chosen(){ return [].slice.call(pklist.querySelectorAll('input:checked')).map(function(i){return i.value;}); }
+  function refreshCount(){
+    var n=2, ids=chosen();
+    secs().forEach(function(s){ if(ids.indexOf(s.id)>-1) n+=countSec(s); });
+    pkcount.textContent=n+' ស្លាយ · ប្រហែល '+Math.max(1,Math.round(n*20/60))+' នាទី';
+  }
+  function buildPicker(){
+    var saved=[]; try{ saved=JSON.parse(localStorage.getItem('shSecs')||'null')||PRESET.full; }catch(e){ saved=PRESET.full; }
+    pklist.innerHTML=secs().map(function(s,i){
+      var t=txt(s.querySelector('h2'));
+      return '<label class="pk-row"><input type="checkbox" value="'+s.id+'"'+(saved.indexOf(s.id)>-1?' checked':'')+'>'
+        +'<span class="pk-n">'+String(i+1).padStart(2,'0')+'</span>'
+        +'<span class="pk-t">'+esc(t)+'</span>'
+        +'<span class="pk-c">'+countSec(s)+'</span></label>';
+    }).join('');
+    pklist.querySelectorAll('input').forEach(function(i){ i.onchange=refreshCount; });
+    refreshCount();
+  }
+  function makeSlide(html, cls){
+    var d=document.createElement('div'); d.className='sl '+(cls||''); d.innerHTML=html;
+    holder.appendChild(d); slides.push(d); return d;
+  }
+  function build(ids, brief){
+    holder.innerHTML=''; slides=[]; restore();
+    makeSlide('<div class="moul sl-k">ព្រះរាជាណាចក្រកម្ពុជា</div>'
+      +'<div class="moul sl-k">ជាតិ សាសនា ព្រះមហាក្សត្រ</div><div class="sl-rule"></div>'
+      +'<h1 class="moul sl-h1">ការកសាងប្រព័ន្ធសុខភាពសិក្សាគ្រប់ជ្រុងជ្រោយ</h1>'
+      +'<div class="sl-sub">និងការលើកកម្ពស់ចលនាកីឡាសាលារៀននៅកម្ពុជា</div>'
+      +'<div class="sl-chips"><span>គោលនយោបាយជាតិ ២០២១–២០៣០</span><span>សំណុំសកម្មភាព ៩ ចំណុច</span>'
+      +'<span>អភិក្រមផ្កាយបី</span><span>SDG 3 &amp; 4</span></div>', 'sl-title');
+
+    secs().forEach(function(sec,si){
+      if(ids.indexOf(sec.id)<0) return;
+      var stitle=txt(sec.querySelector('h2'));
+      makeSlide('<div class="sl-no">'+String(si+1).padStart(2,'0')+'</div>'
+        +'<h2 class="moul sl-h2">'+esc(stitle)+'</h2><div class="sl-rule"></div>', 'sl-div');
+      var lead=sec.querySelector(':scope > p');
+      if(lead && txt(lead).length>40)
+        makeSlide('<div class="sl-eyebrow">'+esc(stitle)+'</div><div class="sl-lead">'+esc(txt(lead))+'</div>');
+      items(sec).forEach(function(a){
+        var head=a.querySelector('.acc-head'), title='', sub='';
+        var t1=head&&head.querySelector('.font-bold');
+        title=txt(t1)||txt(head).replace('▾','');
+        var s1=head&&head.querySelector('.muted:not(.caret)');
+        sub=txt(s1); if(sub==='▾'||sub===title) sub='';
+        title=title.replace(/▾\s*$/,'').trim();
+        var body=[];
+        if(!brief){
+          var bodyEl=a.querySelector('.acc-body');
+          if(bodyEl) [].slice.call(bodyEl.querySelectorAll('p')).forEach(function(p){
+            var v=txt(p); if(v && v.length>2) body.push(v); });
+        }
+        if(!title && !body.length) return;
+        var m=a.querySelector('.picbox[data-has] img, .picbox[data-has] video');
+        var media = m ? '<div class="sl-media"><img src="'+(m.currentSrc||m.src)+'" alt=""></div>' : '';
+        makeSlide('<div class="sl-eyebrow">'+esc(stitle)+'</div>'
+          +'<h3 class="moul sl-h3">'+esc(title)+'</h3>'
+          +(sub?'<div class="sl-lead">'+esc(sub)+'</div>':'')+media
+          +(body.length?'<div class="sl-body">'+body.map(function(b){return '<p>'+esc(b)+'</p>';}).join('')+'</div>':''));
+      });
+      [].slice.call(sec.querySelectorAll('.card')).filter(function(c){return c.querySelector('.chartbox');})
+        .forEach(function(card){
+          var ph=document.createElement('div'); ph.className='sl-ph';
+          card.parentNode.insertBefore(ph,card); moved.push({node:card,ph:ph});
+          makeSlide('<div class="sl-eyebrow">'+esc(stitle)+'</div><div class="sl-chart"></div>')
+            .querySelector('.sl-chart').appendChild(card);
+        });
+      var tbl=sec.querySelector('table');
+      if(tbl){
+        var box=tbl.closest('.card')||tbl;
+        var ph2=document.createElement('div'); ph2.className='sl-ph';
+        box.parentNode.insertBefore(ph2,box); moved.push({node:box,ph:ph2});
+        makeSlide('<div class="sl-eyebrow">'+esc(stitle)+'</div><div class="sl-table"></div>')
+          .querySelector('.sl-table').appendChild(box);
+      }
+    });
+    makeSlide('<div class="sl-rule"></div>'
+      +'<h2 class="moul sl-h1">ការអប់រំដែលបង្រៀនយុវជនឱ្យចេះរស់រានមានជីវិត<br>ប្រកបដោយគុណភាព</h2>'
+      +'<div class="sl-sub">Learn to Live</div><div class="sl-rule"></div>','sl-title');
+  }
+  function restore(){ moved.forEach(function(m){ if(m.ph&&m.ph.parentNode) m.ph.parentNode.replaceChild(m.node,m.ph); }); moved=[]; }
+  function go(i){
+    if(!slides.length) return;
+    cur=Math.max(0,Math.min(slides.length-1,i));
+    slides.forEach(function(s,n){ s.classList.toggle('on',n===cur); });
+    num.textContent=(cur+1)+' / '+slides.length;
+    bar.style.width=((cur+1)/slides.length*100)+'%';
+  }
+  function next(){ cur<slides.length-1 ? go(cur+1) : stop(); }
+  function prev(){ go(cur-1); }
+  function start(){ if(timer) return stop(); timer=setInterval(next,18000); play.innerHTML='&#10073;&#10073;'; play.classList.add('on'); }
+  function stop(){ clearInterval(timer); timer=null; play.innerHTML='&#9654;'; play.classList.remove('on'); }
+
+  function openPicker(){ buildPicker(); pick.classList.add('on'); document.body.style.overflow='hidden'; }
+  function closePicker(){ pick.classList.remove('on'); document.body.style.overflow=''; }
+  function run(){
+    var ids=chosen();
+    try{ localStorage.setItem('shSecs',JSON.stringify(ids)); }catch(e){}
+    closePicker();
+    build(ids, pkbrief.checked);
+    ov.classList.add('on'); document.body.style.overflow='hidden'; go(0);
+    if(document.documentElement.requestFullscreen) document.documentElement.requestFullscreen().catch(function(){});
+  }
+  function close(){
+    stop(); ov.classList.remove('on'); document.body.style.overflow='';
+    restore(); holder.innerHTML=''; slides=[];
+    if(document.fullscreenElement && document.exitFullscreen) document.exitFullscreen().catch(function(){});
+  }
+  window.openShow=openPicker;
+
+  pick.querySelectorAll('[data-preset]').forEach(function(b){
+    b.onclick=function(){
+      var p=b.dataset.preset;
+      pklist.querySelectorAll('input').forEach(function(i){
+        i.checked = p==='all' ? true : p==='none' ? false : PRESET[p].indexOf(i.value)>-1;
+      });
+      if(p==='all') pkbrief.checked=false; else pkbrief.checked=true;
+      refreshCount();
+    };
+  });
+  document.getElementById('pkgo').onclick=run;
+  document.getElementById('pkcancel').onclick=closePicker;
+  pick.addEventListener('click',function(e){ if(e.target===pick) closePicker(); });
+
+  document.getElementById('shnext').onclick=function(e){e.stopPropagation();stop();next();};
+  document.getElementById('shprev').onclick=function(e){e.stopPropagation();stop();prev();};
+  document.getElementById('shclose').onclick=function(e){e.stopPropagation();close();};
+  play.onclick=function(e){e.stopPropagation();start();};
+  holder.addEventListener('click',function(e){
+    if(e.target.closest('.sl-chart,.sl-table,.sl-body,a,button')) return;
+    stop(); next();
+  });
+  window.addEventListener('keydown',function(e){
+    if(pick.classList.contains('on')){ if(e.key==='Escape'){ closePicker(); e.stopImmediatePropagation(); } return; }
+    if(!ov.classList.contains('on')) return;
+    var k=e.key;
+    if(k==='Escape'){ close(); }
+    else if(k==='ArrowRight'||k===' '||k==='PageDown'||k==='Enter'){ e.preventDefault(); stop(); next(); }
+    else if(k==='ArrowLeft'||k==='PageUp'){ e.preventDefault(); stop(); prev(); }
+    else if(k==='Home'){ go(0); } else if(k==='End'){ go(slides.length-1); }
+    else return;
+    e.stopImmediatePropagation();
+  },true);
+
+  var b=document.getElementById('btnPresent');
+  if(b){ b.onclick=function(){ openPicker(); }; b.innerHTML='📽 បទបង្ហាញ'; }
+})();
+</script>
+</body>
+</html>
